@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "dev.trigam.flagpole.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "bannerLayers.BannerDuplicateRecipeFix",
+        "bannerLayers.BannerItemFix",
+        "bannerLayers.LoomScreenHandlerFix"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+	}
+}

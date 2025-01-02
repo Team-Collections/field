@@ -1,0 +1,20 @@
+{
+	"replace": false,
+	"values": [
+		"flagpole:pall_up",
+		"flagpole:pall_down",
+		"flagpole:chevron_up",
+		"flagpole:chevron_down",
+		"flagpole:label_top",
+		"flagpole:label_bottom",
+		"flagpole:ring",
+		"flagpole:hollow_rhombus",
+		"flagpole:inset_outline",
+		"flagpole:long_triangle_top",
+		"flagpole:long_triangle_bottom",
+		"flagpole:circle_left",
+		"flagpole:circle_right",
+		"flagpole:diamond",
+		"flagpole:shield"
+	]
+}

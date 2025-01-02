@@ -2,11 +2,11 @@
 	"schemaVersion": 1,
 	"version": "${version}",
 
-	"id": "template",
-	"name": "Template",
-	"description": "Template description...",
+	"id": "flagpole",
+	"name": "Flagpole",
+	"description": "Breathes some new wind into the Banner system, adding new patterns, features, and removing limits. Let your creativity fly!",
 	"license": "CC0-1.0",
-	"icon": "assets/template/icon.png",
+	"icon": "assets/flagpole/icon.png",
 
 	"authors": [
 		"Trigam",
@@ -15,14 +15,14 @@
 
 	"contact": {
 		"homepage": "https://collections.trigam.dev/",
-		"sources": "https://github.com/Team-Collections/template",
-		"issues": "https://github.com/Team-Collections/template/issues"
+		"sources": "https://github.com/Team-Collections/flagpole",
+		"issues": "https://github.com/Team-Collections/flagpole/issues"
 	},
 
 	"custom": {
 		"modmenu": {
 			"links": {
-				"modmenu.github_releases": "https://github.com/Team-Collections/template/releases",
+				"modmenu.github_releases": "https://github.com/Team-Collections/flagpole/releases",
 				"modmenu.discord": "https://discord.com/invite/KxYudA7Grx"
 			},
 
@@ -30,7 +30,7 @@
 				"id": "collections",
 				"name": "Collections",
 				"description": "A collection of vanilla-style mods, aiming to enhance, rework, and expand upon the vanilla game!",
-				"icon": "assets/template/collections-icon.png"
+				"icon": "assets/flagpole/collections-icon.png"
 			},
 
 			"update_checker": true
@@ -39,14 +39,14 @@
 
 	"environment": "*",
 	"entrypoints": {
-		"main": [ "dev.trigam.template.Template" ],
-		"client": [ "dev.trigam.template.TemplateClient" ],
-		"fabric-datagen": [ "dev.trigam.template.TemplateDataGenerator" ]
+		"main": [ "dev.trigam.flagpole.Flagpole" ],
+		"client": [ "dev.trigam.flagpole.FlagpoleClient" ],
+		"fabric-datagen": [ "dev.trigam.flagpole.FlagpoleDataGenerator" ]
 	},
 
 	"mixins": [
-		"template.mixins.json",
-		{ "config": "template.client.mixins.json", "environment": "client" }
+		"flagpole.mixins.json",
+		{ "config": "flagpole.client.mixins.json", "environment": "client" }
 	],
 
 	"depends": {

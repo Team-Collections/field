@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "dev.trigam.flagpole.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"bannerLayers.LoomScreenFix"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
