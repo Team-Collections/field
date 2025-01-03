@@ -10,4 +10,6 @@ public class FlagpoleConfig extends MidnightConfig {
     @Entry( category = MAIN, min = 0, max = 64 ) public static int bannerLayers = 32;
     @Entry( category = MAIN, min = 0, max = 64 ) public static int bannerTooltipLayers = 8;
 
+    @Entry( category = MAIN, min = 0, max = 64 ) public static int bannerStackSize = 64;
+
 }

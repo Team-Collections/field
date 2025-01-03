@@ -6,6 +6,8 @@
 			"flagpole.midnightconfig.bannerLayers.tooltip": "The maximum number of Banner Patterns allowed on a single Banner\n(Vanilla: 8)",
 		"flagpole.midnightconfig.bannerTooltipLayers": "Banner Tooltip Layer Limit",
 			"flagpole.midnightconfig.bannerTooltipLayers.tooltip": "The maximum number of Banner Patterns displayed on the tooltip before being trimmed",
+		"flagpole.midnightconfig.bannerStackSize": "Banner Stack Size",
+			"flagpole.midnightconfig.bannerStackSize.tooltip": "The maximum stack size of Banners\n(Vanilla: 16)",
 
 
 	"_TOOLTIPS_": "",

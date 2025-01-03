@@ -3,6 +3,7 @@ package dev.trigam.flagpole;
 import dev.trigam.flagpole.config.FlagpoleConfig;
 import dev.trigam.flagpole.item.InventoryInit;
 import dev.trigam.flagpole.item.ItemInit;
+import dev.trigam.flagpole.item.ModifyItemInit;
 import dev.trigam.flagpole.tag.BannerPatternTagInit;
 import eu.midnightdust.lib.config.MidnightConfig;
 import net.fabricmc.api.ModInitializer;
@@ -25,6 +26,7 @@ public class Flagpole implements ModInitializer {
 
 		ItemInit.register();
 		InventoryInit.sort();
+		ModifyItemInit.init();
 		BannerPatternTagInit.register();
 	}
 }
