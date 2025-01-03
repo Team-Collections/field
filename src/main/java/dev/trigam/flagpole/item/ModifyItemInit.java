@@ -11,6 +11,7 @@ import java.util.List;
 
 public class ModifyItemInit {
 
+    // To-do: Get all the banners from the item tag (for mod compat)
     public static final List<Item> BANNERS = Arrays.asList(
         Items.WHITE_BANNER, Items.LIGHT_GRAY_BANNER, Items.GRAY_BANNER, Items.BLACK_BANNER,
         Items.BROWN_BANNER, Items.RED_BANNER, Items.ORANGE_BANNER, Items.YELLOW_BANNER,
