@@ -35,13 +35,14 @@ public class LoomScreenTooltip {
         if ( isHovered && FieldConfig.loomTooltip) {
             RegistryEntry<BannerPattern> hoveredPattern = thiz.getScreenHandler().getBannerPatterns().get( patternIndex );
             List<Text> tooltipFields = Lists.newArrayList();
+            boolean advancedTooltips = MinecraftClient.getInstance().options.advancedItemTooltips;
 
             Text patternName = Text.translatable( hoveredPattern.value().translationKey() );
             Text patternId = Text.translatable( hoveredPattern.getIdAsString() )
                 .formatted( Formatting.DARK_GRAY );
 
             tooltipFields.add( patternName );
-            tooltipFields.add( patternId );
+            if ( advancedTooltips ) tooltipFields.add( patternId );
 
             context.drawTooltip(
                 MinecraftClient.getInstance().textRenderer, tooltipFields,

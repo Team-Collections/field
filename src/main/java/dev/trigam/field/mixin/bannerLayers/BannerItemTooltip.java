@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import java.util.List;
 
 @Mixin( BannerItem.class )
-public class BannerItemFix {
+public class BannerItemTooltip {
 
     @Redirect(
         method = "appendTooltip",
