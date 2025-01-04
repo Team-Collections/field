@@ -1,20 +1,20 @@
 {
 	"replace": false,
 	"values": [
-		"flagpole:pall_up",
-		"flagpole:pall_down",
-		"flagpole:chevron_up",
-		"flagpole:chevron_down",
-		"flagpole:label_top",
-		"flagpole:label_bottom",
-		"flagpole:ring",
-		"flagpole:hollow_rhombus",
-		"flagpole:inset_outline",
-		"flagpole:long_triangle_top",
-		"flagpole:long_triangle_bottom",
-		"flagpole:circle_left",
-		"flagpole:circle_right",
-		"flagpole:diamond",
-		"flagpole:shield"
+		"field:pall_up",
+		"field:pall_down",
+		"field:chevron_up",
+		"field:chevron_down",
+		"field:label_top",
+		"field:label_bottom",
+		"field:ring",
+		"field:hollow_rhombus",
+		"field:inset_outline",
+		"field:long_triangle_top",
+		"field:long_triangle_bottom",
+		"field:circle_left",
+		"field:circle_right",
+		"field:diamond",
+		"field:shield"
 	]
 }

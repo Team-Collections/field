@@ -1,0 +1,13 @@
+{
+    "required": true,
+    "package": "dev.trigam.field.mixin",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+        "bannerLayers.BannerDuplicateRecipeFix",
+        "bannerLayers.BannerItemFix",
+        "bannerLayers.LoomScreenHandlerFix"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+	}
+}

@@ -2,11 +2,11 @@
 	"schemaVersion": 1,
 	"version": "${version}",
 
-	"id": "flagpole",
-	"name": "Flagpole",
+	"id": "field",
+	"name": "Field",
 	"description": "Breathes some new wind into the Banner system, adding new patterns, features, and removing limits. Let your creativity fly!",
 	"license": "CC0-1.0",
-	"icon": "assets/flagpole/icon.png",
+	"icon": "assets/field/icon.png",
 
 	"authors": [
 		"Trigam",
@@ -15,14 +15,14 @@
 
 	"contact": {
 		"homepage": "https://collections.trigam.dev/",
-		"sources": "https://github.com/Team-Collections/flagpole",
-		"issues": "https://github.com/Team-Collections/flagpole/issues"
+		"sources": "https://github.com/Team-Collections/field",
+		"issues": "https://github.com/Team-Collections/field/issues"
 	},
 
 	"custom": {
 		"modmenu": {
 			"links": {
-				"modmenu.github_releases": "https://github.com/Team-Collections/flagpole/releases",
+				"modmenu.github_releases": "https://github.com/Team-Collections/field/releases",
 				"modmenu.discord": "https://discord.com/invite/KxYudA7Grx"
 			},
 
@@ -30,7 +30,7 @@
 				"id": "collections",
 				"name": "Collections",
 				"description": "A collection of vanilla-style mods, aiming to enhance, rework, and expand upon the vanilla game!",
-				"icon": "assets/flagpole/collections-icon.png"
+				"icon": "assets/field/collections-icon.png"
 			},
 
 			"update_checker": true
@@ -39,14 +39,16 @@
 
 	"environment": "*",
 	"entrypoints": {
-		"main": [ "dev.trigam.flagpole.Flagpole" ],
-		"client": [ "dev.trigam.flagpole.FlagpoleClient" ],
-		"fabric-datagen": [ "dev.trigam.flagpole.FlagpoleDataGenerator" ]
+		"main": [ "dev.trigam.field.Field" ],
+		"client": [
+			"dev.trigam.field.FieldClient"
+		],
+		"fabric-datagen": [ "dev.trigam.field.FieldDataGenerator" ]
 	},
 
 	"mixins": [
-		"flagpole.mixins.json",
-		{ "config": "flagpole.client.mixins.json", "environment": "client" }
+		"field.mixins.json",
+		{ "config": "field.client.mixins.json", "environment": "client" }
 	],
 
 	"depends": {

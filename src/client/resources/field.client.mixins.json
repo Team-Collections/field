@@ -1,0 +1,12 @@
+{
+    "required": true,
+    "package": "dev.trigam.field.mixin.client",
+    "compatibilityLevel": "JAVA_21",
+    "client": [
+        "bannerLayers.LoomScreenFix",
+        "loomTooltip.LoomScreenTooltip"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+	}
+}
