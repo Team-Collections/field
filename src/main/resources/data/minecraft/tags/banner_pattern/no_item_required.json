@@ -1,20 +1,22 @@
 {
 	"replace": false,
 	"values": [
-		"field:pall_up",
-		"field:pall_down",
+		"field:checkered",
+		"field:checkered_inverted",
+		"field:inset_outline",
 		"field:chevron_up",
 		"field:chevron_down",
-		"field:label_top",
-		"field:label_bottom",
-		"field:ring",
-		"field:hollow_rhombus",
-		"field:inset_outline",
+		"field:pall_up",
+		"field:pall_down",
 		"field:long_triangle_top",
 		"field:long_triangle_bottom",
 		"field:circle_left",
 		"field:circle_right",
+		"field:ring",
 		"field:diamond",
-		"field:shield"
+		"field:hollow_rhombus",
+		"field:shield",
+		"field:label_top",
+		"field:label_bottom"
 	]
 }
