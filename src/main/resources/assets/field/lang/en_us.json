@@ -8,6 +8,8 @@
 			"field.midnightconfig.bannerTooltipLayers.tooltip": "The maximum number of Banner Patterns displayed on the tooltip before being trimmed",
 		"field.midnightconfig.bannerStackSize": "Banner Stack Size",
 			"field.midnightconfig.bannerStackSize.tooltip": "The maximum stack size of Banners\n(Vanilla: 16)",
+		"field.midnightconfig.loomTooltip": "Loom Tooltips",
+			"field.midnightconfig.loomTooltip.tooltip": "Display tooltips for banner patterns when hovering over them in the Loom",
 
 
 	"_TOOLTIPS_": "",

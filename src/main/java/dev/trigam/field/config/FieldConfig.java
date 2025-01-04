@@ -12,4 +12,6 @@ public class FieldConfig extends MidnightConfig {
 
     @Entry( category = MAIN, min = 0, max = 64 ) public static int bannerStackSize = 64;
 
+    @Entry( category = MAIN ) public static boolean loomTooltip = true;
+
 }

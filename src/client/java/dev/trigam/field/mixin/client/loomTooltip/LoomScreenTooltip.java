@@ -1,6 +1,7 @@
 package dev.trigam.field.mixin.client.loomTooltip;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.trigam.field.config.FieldConfig;
 import net.minecraft.block.entity.BannerPattern;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -31,7 +32,7 @@ public class LoomScreenTooltip {
         @Local( ordinal = 0 ) boolean isHovered, @Local( ordinal = 10 ) int patternIndex
     ) {
         LoomScreen thiz = ( LoomScreen )( Object ) this;
-        if ( isHovered ) {
+        if ( isHovered && FieldConfig.loomTooltip) {
             RegistryEntry<BannerPattern> hoveredPattern = thiz.getScreenHandler().getBannerPatterns().get( patternIndex );
             List<Text> tooltipFields = Lists.newArrayList();
 
