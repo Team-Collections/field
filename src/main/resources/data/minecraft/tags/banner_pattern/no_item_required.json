@@ -3,9 +3,9 @@
 	"values": [
 		"field:gradient_left_to_right",
 		"field:gradient_right_to_left",
-		"field:gradient_radial_inner",
 		"field:gradient_stripe_horizontal",
 		"field:gradient_stripe_vertical",
+		"field:gradient_radial_inner",
 		"field:striped_horizontal",
 		"field:striped_diagonal_left",
 		"field:striped_diagonal_right",
