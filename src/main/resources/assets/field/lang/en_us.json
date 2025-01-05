@@ -3,13 +3,15 @@
 		"field.midnightconfig.title": "Field Config",
 
 		"field.midnightconfig.bannerLayers": "Banner Layer Limit",
-			"field.midnightconfig.bannerLayers.tooltip": "The maximum number of Banner Patterns allowed on a single Banner\n(Vanilla: 8)",
+			"field.midnightconfig.bannerLayers.tooltip": "The maximum number of Banner Patterns allowed on a single Banner",
 		"field.midnightconfig.bannerTooltipLayers": "Banner Tooltip Layer Limit",
 			"field.midnightconfig.bannerTooltipLayers.tooltip": "The maximum number of Banner Patterns displayed on the tooltip before being trimmed",
 		"field.midnightconfig.bannerStackSize": "Banner Stack Size",
-			"field.midnightconfig.bannerStackSize.tooltip": "The maximum stack size of Banners\n(Vanilla: 16)",
+			"field.midnightconfig.bannerStackSize.tooltip": "The maximum stack size of Banners\n(Requires restart)",
 		"field.midnightconfig.loomTooltip": "Loom Tooltips",
 			"field.midnightconfig.loomTooltip.tooltip": "Display tooltips for banner patterns when hovering over them in the Loom",
+		"field.midnightconfig.wearableBanners": "Wearable Banners",
+			"field.midnightconfig.wearableBanners.tooltip": "Banners can be worn in the helmet slot\n(Requires restart)",
 
 
 	"_TOOLTIPS_": "",

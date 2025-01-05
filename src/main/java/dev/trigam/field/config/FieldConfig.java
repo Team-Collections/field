@@ -14,4 +14,6 @@ public class FieldConfig extends MidnightConfig {
 
     @Entry( category = MAIN ) public static boolean loomTooltip = true;
 
+    @Entry( category = MAIN ) public static boolean wearableBanners = true;
+
 }

@@ -3,6 +3,8 @@ package dev.trigam.field.item;
 import dev.trigam.field.config.FieldConfig;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.EquippableComponent;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 
@@ -22,11 +24,25 @@ public class ModifyItemInit {
     public static void init() {
 
         DefaultItemComponentEvents.MODIFY.register( context -> {
-            // Banners
+            // Banner Stack Size
             if ( FieldConfig.bannerStackSize != 16 ) {
                 for ( Item banner : BANNERS ) {
                     context.modify( banner, builder ->
-                        builder.add( DataComponentTypes.MAX_STACK_SIZE, FieldConfig.bannerStackSize )
+                        builder.add(
+                            DataComponentTypes.MAX_STACK_SIZE,
+                            FieldConfig.bannerStackSize
+                        )
+                    );
+                }
+            }
+            // Wearable Banners
+            if ( FieldConfig.wearableBanners ) {
+                for ( Item banner : BANNERS ) {
+                    context.modify( banner, builder ->
+                        builder.add(
+                            DataComponentTypes.EQUIPPABLE,
+                            EquippableComponent.builder( EquipmentSlot.HEAD ).build()
+                        )
                     );
                 }
             }
