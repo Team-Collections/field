@@ -1,6 +1,8 @@
 package dev.trigam.field;
 
+import dev.trigam.field.component.ComponentInit;
 import dev.trigam.field.config.FieldConfig;
+import dev.trigam.field.event.EventInit;
 import dev.trigam.field.item.InventoryInit;
 import dev.trigam.field.item.ItemInit;
 import dev.trigam.field.item.ModifyItemInit;
@@ -27,6 +29,10 @@ public class Field implements ModInitializer {
 		ItemInit.register();
 		InventoryInit.sort();
 		ModifyItemInit.init();
+
+		EventInit.register();
+		ComponentInit.register();
+
 		BannerPatternTagInit.register();
 	}
 }

@@ -4,9 +4,10 @@
     "compatibilityLevel": "JAVA_21",
     "client": [
         "bannerLayers.LoomScreenFix",
+        "glowingLayers.RenderGlowingLayers",
         "loomTooltip.LoomScreenTooltip"
     ],
     "injectors": {
         "defaultRequire": 1
-	}
+    }
 }

@@ -1,6 +1,6 @@
-package dev.trigam.field.mixin.client.glowingBanners;
+package dev.trigam.field.mixin.client.glowingLayers;
 
-import dev.trigam.field.Field;
+import com.llamalad7.mixinextras.sugar.Local;
 import dev.trigam.field.component.GlowingLayersComponent;
 import dev.trigam.field.impl.FieldBannerBlockEntity;
 import net.minecraft.block.entity.BannerBlockEntity;
@@ -27,20 +27,22 @@ public class RenderGlowingLayers {
         )
     )
     private void getBannerData( BannerBlockEntity bannerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci ) {
-        glowingLayers = ( (FieldBannerBlockEntity) bannerBlockEntity ).field$getGlowingLayer();
+        glowingLayers = ( (FieldBannerBlockEntity) bannerBlockEntity ).field$getGlowingLayers();
     }
 
     @ModifyArg(
         method = "renderCanvas(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/model/ModelPart;Lnet/minecraft/client/util/SpriteIdentifier;ZLnet/minecraft/util/DyeColor;Lnet/minecraft/component/type/BannerPatternsComponent;ZZ)V",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/render/block/entity/BannerBlockEntityRenderer;renderLayer(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/model/ModelPart;Lnet/minecraft/client/util/SpriteIdentifier;Lnet/minecraft/util/DyeColor;)V"
+            target = "Lnet/minecraft/client/render/block/entity/BannerBlockEntityRenderer;renderLayer(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/model/ModelPart;Lnet/minecraft/client/util/SpriteIdentifier;Lnet/minecraft/util/DyeColor;)V",
+            ordinal = 1
         ),
         index = 2
     )
-    private static int whatever( int light ) {
-        Field.LOGGER.info( glowingLayers.toString() );
-        return light;
+    private static int getLayerLight( int light, @Local( ordinal = 2 ) int layerIndex ) {
+        boolean isLayerGlowing = glowingLayers.isGlowing( layerIndex + 1 );
+        if ( isLayerGlowing ) return 15728880;
+        else return light;
     }
 
 }

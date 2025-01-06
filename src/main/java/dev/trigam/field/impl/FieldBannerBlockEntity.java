@@ -4,6 +4,7 @@ import dev.trigam.field.component.GlowingLayersComponent;
 
 public interface FieldBannerBlockEntity {
 
-    public GlowingLayersComponent field$getGlowingLayer();
+    GlowingLayersComponent field$getGlowingLayers();
 
+    void field$setGlowing( int layerIndex, boolean glowing );
 }

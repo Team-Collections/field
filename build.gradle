@@ -27,6 +27,8 @@ loom {
 		}
 	}
 
+	accessWidenerPath = file( "src/main/resources/field.accessWidener" )
+
 }
 
 fabricApi {
