@@ -1,7 +1,7 @@
-package dev.trigam.field.mixin.bannerLayers;
+package dev.trigam.field.mixin;
 
-import dev.trigam.field.component.ComponentInit;
 import dev.trigam.field.component.GlowingLayersComponent;
+import dev.trigam.field.component.ItemComponentInit;
 import dev.trigam.field.config.FieldConfig;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.BannerPatternsComponent;
@@ -15,7 +15,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,9 +30,9 @@ public class BannerItemTooltip {
     )
     private void appendBannerTooltip( ItemStack stack, List<Text> tooltip ) {
         BannerPatternsComponent patterns = stack.get( DataComponentTypes.BANNER_PATTERNS );
-        GlowingLayersComponent glowingLayers = stack.get( ComponentInit.GLOWING_LAYERS );
+        GlowingLayersComponent glowingLayers = stack.get( ItemComponentInit.GLOWING_LAYERS );
 
-        boolean baseGlowing = glowingLayers != null && glowingLayers.isGlowing( 0 );
+        boolean baseGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( 0 );
         if ( baseGlowing ) {
             tooltip.add( Text.translatable( "block.field.banner.glowing" ) );
         }
@@ -51,7 +50,7 @@ public class BannerItemTooltip {
             // Order with newest first
             for ( int i = 0; i < shownLayers; i++ ) {
                 BannerPatternsComponent.Layer layer = bannerLayers.get( i );
-                boolean layerGlowing = glowingLayers != null && glowingLayers.isGlowing( i + 1 );
+                boolean layerGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( i + 1 );
                 MutableText layerTooltip = getLayerTooltip( layer, layerGlowing );
                 tooltip.add( ScreenTexts.space().append( layerTooltip.formatted( Formatting.GRAY ) ) );
             }

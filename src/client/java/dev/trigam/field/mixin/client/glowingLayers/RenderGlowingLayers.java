@@ -1,8 +1,8 @@
 package dev.trigam.field.mixin.client.glowingLayers;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.trigam.field.component.ComponentInit;
 import dev.trigam.field.component.GlowingLayersComponent;
-import dev.trigam.field.impl.FieldBannerBlockEntity;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BannerBlockEntityRenderer;
@@ -14,20 +14,34 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+// Adapted from: https://github.com/UltrusBot/glow-banners/blob/1.21/common/src/main/java/me/ultrusmods/glowingbanners/mixin/client/BannerRendererMixin.java
 @Mixin( BannerBlockEntityRenderer.class )
 public class RenderGlowingLayers {
 
     @Unique
-    private static GlowingLayersComponent glowingLayers = new GlowingLayersComponent();
+    private static BannerBlockEntity banner;
+
+    // Banner context
+    @Inject(
+        method = "render(Lnet/minecraft/block/entity/BannerBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V",
+        at = @At( value = "HEAD" )
+    )
+    private void getBannerData( BannerBlockEntity bannerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci ) {
+        if ( bannerBlockEntity.hasWorld() ) {
+            banner = bannerBlockEntity;
+        }
+    }
 
     @Inject(
         method = "render(Lnet/minecraft/block/entity/BannerBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V",
         at = @At(
-            value = "HEAD"
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/render/block/entity/BannerBlockEntityRenderer;render(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IIFLnet/minecraft/client/render/block/entity/model/BannerBlockModel;Lnet/minecraft/client/render/block/entity/model/BannerFlagBlockModel;FLnet/minecraft/util/DyeColor;Lnet/minecraft/component/type/BannerPatternsComponent;)V",
+            shift = At.Shift.AFTER
         )
     )
-    private void getBannerData( BannerBlockEntity bannerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci ) {
-        glowingLayers = ( (FieldBannerBlockEntity) bannerBlockEntity ).field$getGlowingLayers();
+    private void clearBannerData( BannerBlockEntity bannerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci ) {
+        banner = null;
     }
 
     @ModifyArg(
@@ -40,7 +54,10 @@ public class RenderGlowingLayers {
         index = 2
     )
     private static int getLayerLight( int light, @Local( ordinal = 2 ) int layerIndex ) {
-        boolean isLayerGlowing = glowingLayers.isGlowing( layerIndex + 1 );
+        if ( banner == null ) return light;
+        GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.getNullable( banner );
+        boolean isLayerGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( layerIndex + 1 );
+
         if ( isLayerGlowing ) return 15728880;
         else return light;
     }

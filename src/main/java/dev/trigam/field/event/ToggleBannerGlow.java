@@ -1,17 +1,19 @@
 package dev.trigam.field.event;
 
-import dev.trigam.field.Field;
+import dev.trigam.field.component.ComponentInit;
 import dev.trigam.field.component.GlowingLayersComponent;
-import dev.trigam.field.impl.FieldBannerBlockEntity;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.component.type.BannerPatternsComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -34,30 +36,29 @@ public class ToggleBannerGlow {
         if ( blockEntity instanceof BannerBlockEntity banner ) {
             // Layer data
             List<BannerPatternsComponent.Layer> bannerLayers = banner.getPatterns().layers();
-            GlowingLayersComponent glowingLayers = ((FieldBannerBlockEntity) banner).field$getGlowingLayers();
-            boolean isLayerGlowing = glowingLayers != null && glowingLayers.isGlowing( bannerLayers.size() );
-
-            Field.LOGGER.info( "-----------------\n" );
-            Field.LOGGER.info( "Layer glowing?: {}", isLayerGlowing );
-            Field.LOGGER.info( "Adding glow?: {}, Removing glow?: {}", addGlowing, removeGlowing );
+            GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.get( banner );
+            boolean isLayerGlowing = glowingLayers.isLayerGlowing( bannerLayers.size() );
 
             boolean canInteract = canInteract( isLayerGlowing, addGlowing, removeGlowing );
-            Field.LOGGER.info( "Can interact?: {}", canInteract );
             if ( !canInteract ) return ActionResult.PASS;
-
             if ( world.isClient() ) return ActionResult.SUCCESS;
-            if ( glowingLayers != null ) {
-                // Play sound
-                SoundEvent useSound = addGlowing ? SoundEvents.ITEM_GLOW_INK_SAC_USE : SoundEvents.ITEM_INK_SAC_USE;
-                world.playSound( null, pos, useSound, SoundCategory.BLOCKS, 1.0F, 1.0F );
 
-                // Toggle glowing
-                if ( addGlowing ) ((FieldBannerBlockEntity) banner).field$setGlowing( bannerLayers.size(), true );
-                if ( removeGlowing ) ((FieldBannerBlockEntity) banner).field$setGlowing( bannerLayers.size(), false );
+            // Play sound
+            SoundEvent useSound = addGlowing ? SoundEvents.ITEM_GLOW_INK_SAC_USE : SoundEvents.ITEM_INK_SAC_USE;
+            world.playSound( null, pos, useSound, SoundCategory.BLOCKS, 1.0F, 1.0F );
 
-                if ( !player.isCreative() ) usedItem.decrement( 1 );
-                return ActionResult.SUCCESS_SERVER;
-            }
+            // Toggle glowing
+            if ( addGlowing ) glowingLayers.setLayerGlowing( bannerLayers.size(), true );
+            if ( removeGlowing ) glowingLayers.setLayerGlowing( bannerLayers.size(), false );
+
+            // Stack + stats
+            if ( !player.isCreative() ) usedItem.decrement( 1 );
+            Criteria.ITEM_USED_ON_BLOCK.trigger(
+                (ServerPlayerEntity) player, pos, usedItem
+            );
+            player.incrementStat( Stats.USED.getOrCreateStat( usedItem.getItem() ) );
+
+            return ActionResult.SUCCESS_SERVER;
         }
         return ActionResult.PASS;
     }

@@ -1,28 +1,26 @@
 package dev.trigam.field.component;
 
 import dev.trigam.field.Field;
-import net.minecraft.component.ComponentType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import java.util.function.UnaryOperator;
+import net.minecraft.block.entity.BannerBlockEntity;
+import org.ladysnake.cca.api.v3.block.BlockComponentFactoryRegistry;
+import org.ladysnake.cca.api.v3.block.BlockComponentInitializer;
+import org.ladysnake.cca.api.v3.component.Component;
+import org.ladysnake.cca.api.v3.component.ComponentKey;
+import org.ladysnake.cca.api.v3.component.ComponentRegistry;
 
-public class ComponentInit {
+public class ComponentInit implements BlockComponentInitializer {
 
-    public static final ComponentType< GlowingLayersComponent > GLOWING_LAYERS =
-        register( "glowing_layers", ( builder ) -> builder
-            .codec( GlowingLayersComponent.CODEC )
-            .packetCodec( GlowingLayersComponent.PACKET_CODEC )
-            .cache()
-        );
+    public static final ComponentKey< GlowingLayersComponent > GLOWING_LAYERS =
+        register( "glowing_layers", GlowingLayersComponent.class );
 
-    private static <T> ComponentType<T> register( String id, UnaryOperator<ComponentType.Builder<T>> builderOperator ) {
-        return Registry.register(
-            Registries.DATA_COMPONENT_TYPE,
-            Field.id( id ),
-            ( builderOperator.apply( ComponentType.builder() ) ).build()
-        );
+    public static <C extends Component> ComponentKey<C> register( String id, Class<C> componentClass ) {
+        return ComponentRegistry.getOrCreate( Field.id( id ), componentClass );
     }
 
     public static void register () {}
 
+    @Override
+    public void registerBlockComponentFactories( BlockComponentFactoryRegistry registry ) {
+        registry.registerFor( BannerBlockEntity.class, GLOWING_LAYERS, GlowingLayersComponent::new );
+    }
 }

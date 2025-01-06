@@ -2,55 +2,55 @@ package dev.trigam.field.component;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import io.netty.buffer.ByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.codec.PacketCodecs;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.TreeSet;
+import net.minecraft.block.entity.BannerBlockEntity;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.RegistryWrapper;
+import org.ladysnake.cca.api.v3.component.sync.AutoSyncedComponent;
+import java.util.*;
+import java.util.stream.Collectors;
 
-// Adapted from: https://github.com/UltrusBot/glow-banners/blob/1.21/common/src/main/java/me/ultrusmods/glowingbanners/component/BannerGlowComponent.java
-public class GlowingLayersComponent {
+public class GlowingLayersComponent implements AutoSyncedComponent {
+
+    public Set<Integer> glowingLayers = new TreeSet<>();
+    private BannerBlockEntity banner;
+
+    public GlowingLayersComponent( BannerBlockEntity banner ) {
+        this.banner = banner;
+    }
+    public GlowingLayersComponent(Set<Integer> glowingLayers) {
+        this.glowingLayers = glowingLayers;
+    }
 
     // Codecs
-    public static final Codec<GlowingLayersComponent> CODEC = RecordCodecBuilder.create( instance ->
+    public static final Codec<GlowingLayersComponent> CODEC = RecordCodecBuilder.create(instance ->
         instance.group(
             Codec.list( Codec.INT ).optionalFieldOf( "glowing_layers", List.of() )
-                .xmap(Collections::unmodifiableCollection, List::copyOf )
+                .xmap(Set::copyOf, List::copyOf )
                 .forGetter( GlowingLayersComponent::getGlowingLayers )
         ).apply( instance, GlowingLayersComponent::new )
     );
-    public static final PacketCodec< ByteBuf, GlowingLayersComponent > PACKET_CODEC = PacketCodecs.INTEGER
-        .collect( PacketCodecs.toList() )
-        .xmap( GlowingLayersComponent::new, GlowingLayersComponent::getGlowingLayersList );
 
+    public Set<Integer> getGlowingLayers() { return this.glowingLayers; }
 
-    private final Collection<Integer> glowingLayers = new TreeSet<>( Integer::compare );
-
-    public GlowingLayersComponent() { this( List.of() ); }
-    public GlowingLayersComponent( Collection<Integer> glowingLayers ) {
-        this.glowingLayers.addAll( glowingLayers );
-    }
-
-    public Collection<Integer> getGlowingLayers() {
-        return this.glowingLayers;
-    }
-    public List<Integer> getGlowingLayersList() {
-        return this.glowingLayers.stream().toList();
-    }
-
-    public boolean isGlowing( int layerIndex ) {
+    public boolean isLayerGlowing( int layerIndex ) {
         return this.glowingLayers.contains( layerIndex );
     }
 
-    public void setGlowing( int layerIndex, boolean glowing ) {
+    public void setLayerGlowing( int layerIndex, boolean glowing ) {
         if ( glowing ) this.glowingLayers.add( layerIndex );
         else this.glowingLayers.remove( layerIndex );
+
+        ComponentInit.GLOWING_LAYERS.sync( this.banner );
     }
 
-    public void clearGlowing() {
-        this.glowingLayers.clear();
+    @Override
+    public void readFromNbt( NbtCompound tag, RegistryWrapper.WrapperLookup wrapperLookup ) {
+        int[] nbtLayers = tag.getIntArray("glowing_layers");
+        this.glowingLayers = Arrays.stream( nbtLayers ).boxed().collect( Collectors.toSet() );
     }
 
+    @Override
+    public void writeToNbt( NbtCompound tag, RegistryWrapper.WrapperLookup wrapperLookup ) {
+        tag.putIntArray( "glowing_layers", this.glowingLayers.stream().toList() );
+    }
 }

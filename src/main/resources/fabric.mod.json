@@ -20,6 +20,10 @@
 	},
 
 	"custom": {
+		"cardinal-components": [
+			"field:glowing_layers"
+		],
+
 		"modmenu": {
 			"links": {
 				"modmenu.github_releases": "https://github.com/Team-Collections/field/releases",
@@ -43,7 +47,8 @@
 		"client": [
 			"dev.trigam.field.FieldClient"
 		],
-		"fabric-datagen": [ "dev.trigam.field.FieldDataGenerator" ]
+		"fabric-datagen": [ "dev.trigam.field.FieldDataGenerator" ],
+		"cardinal-components": ["dev.trigam.field.component.ComponentInit" ]
 	},
 
 	"mixins": [

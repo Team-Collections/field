@@ -4,9 +4,8 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [
         "bannerLayers.BannerDuplicateRecipeFix",
-        "bannerLayers.BannerItemTooltip",
-        "bannerLayers.LoomScreenHandlerFix",
-        "glowingLayers.BannerEntityComponents"
+        "BannerItemTooltip",
+        "bannerLayers.LoomScreenHandlerFix"
     ],
     "injectors": {
         "defaultRequire": 1
