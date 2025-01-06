@@ -37,15 +37,16 @@ public class ToggleBannerGlow {
             GlowingLayersComponent glowingLayers = ((FieldBannerBlockEntity) banner).field$getGlowingLayers();
             boolean isLayerGlowing = glowingLayers != null && glowingLayers.isGlowing( bannerLayers.size() );
 
-            Field.LOGGER.info( "Glowing layers: {}", glowingLayers.getGlowingLayers() );
-            Field.LOGGER.info( "Layer {} is {}", bannerLayers.size(), isLayerGlowing ? "glowing" : "not glowing" );
+            Field.LOGGER.info( "-----------------\n" );
+            Field.LOGGER.info( "Layer glowing?: {}", isLayerGlowing );
+            Field.LOGGER.info( "Adding glow?: {}, Removing glow?: {}", addGlowing, removeGlowing );
 
             boolean canInteract = canInteract( isLayerGlowing, addGlowing, removeGlowing );
             Field.LOGGER.info( "Can interact?: {}", canInteract );
-            if ( !canInteract ) return ActionResult.FAIL;
+            if ( !canInteract ) return ActionResult.PASS;
 
-            if ( world.isClient ) return ActionResult.SUCCESS;
-            else if ( glowingLayers != null ) {
+            if ( world.isClient() ) return ActionResult.SUCCESS;
+            if ( glowingLayers != null ) {
                 // Play sound
                 SoundEvent useSound = addGlowing ? SoundEvents.ITEM_GLOW_INK_SAC_USE : SoundEvents.ITEM_INK_SAC_USE;
                 world.playSound( null, pos, useSound, SoundCategory.BLOCKS, 1.0F, 1.0F );
@@ -55,10 +56,10 @@ public class ToggleBannerGlow {
                 if ( removeGlowing ) ((FieldBannerBlockEntity) banner).field$setGlowing( bannerLayers.size(), false );
 
                 if ( !player.isCreative() ) usedItem.decrement( 1 );
-                return ActionResult.SUCCESS;
+                return ActionResult.SUCCESS_SERVER;
             }
         }
-        return ActionResult.FAIL;
+        return ActionResult.PASS;
     }
 
     public static boolean canInteract( boolean isLayerGlowing, boolean addGlowing, boolean removeGlowing ) {

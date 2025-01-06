@@ -11,6 +11,7 @@ public class ComponentInit {
     public static final ComponentType< GlowingLayersComponent > GLOWING_LAYERS =
         register( "glowing_layers", ( builder ) -> builder
             .codec( GlowingLayersComponent.CODEC )
+            .packetCodec( GlowingLayersComponent.PACKET_CODEC )
             .cache()
         );
 
