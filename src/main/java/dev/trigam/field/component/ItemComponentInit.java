@@ -9,9 +9,10 @@ import java.util.function.UnaryOperator;
 public class ItemComponentInit {
 
     public static final ComponentType< GlowingLayersComponent > GLOWING_LAYERS =
-        register( "glowing_layers", builder -> builder
-            .codec( GlowingLayersComponent.CODEC )
-            .cache()
+        register( "glowing_layers",
+            builder -> builder
+                .codec( GlowingLayersComponent.CODEC )
+                .cache()
         );
 
     private static <T> ComponentType<T> register( String id, UnaryOperator<ComponentType.Builder<T>> builderOperator ) {

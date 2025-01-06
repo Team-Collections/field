@@ -6,7 +6,10 @@ import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.registry.RegistryWrapper;
 import org.ladysnake.cca.api.v3.component.sync.AutoSyncedComponent;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 public class GlowingLayersComponent implements AutoSyncedComponent {
