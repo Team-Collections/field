@@ -37,7 +37,9 @@ public class ToggleBannerGlow {
             // Layer data
             List<BannerPatternsComponent.Layer> bannerLayers = banner.getPatterns().layers();
             GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.get( banner );
-            boolean isLayerGlowing = glowingLayers.isLayerGlowing( bannerLayers.size() );
+
+            int targetLayer = getTargetLayer( bannerLayers, glowingLayers, addGlowing );
+            boolean isLayerGlowing = glowingLayers.isLayerGlowing( targetLayer );
 
             boolean canInteract = canInteract( isLayerGlowing, addGlowing, removeGlowing );
             if ( !canInteract ) return ActionResult.PASS;
@@ -48,8 +50,8 @@ public class ToggleBannerGlow {
             world.playSound( null, pos, useSound, SoundCategory.BLOCKS, 1.0F, 1.0F );
 
             // Toggle glowing
-            if ( addGlowing ) glowingLayers.setLayerGlowing( bannerLayers.size(), true );
-            if ( removeGlowing ) glowingLayers.setLayerGlowing( bannerLayers.size(), false );
+            if ( addGlowing ) glowingLayers.setLayerGlowing( targetLayer, true );
+            if ( removeGlowing ) glowingLayers.setLayerGlowing( targetLayer, false );
 
             // Stack + stats
             if ( !player.isCreative() ) usedItem.decrement( 1 );
@@ -65,6 +67,20 @@ public class ToggleBannerGlow {
 
     public static boolean canInteract( boolean isLayerGlowing, boolean addGlowing, boolean removeGlowing ) {
         return ( addGlowing && !isLayerGlowing ) || ( removeGlowing && isLayerGlowing );
+    }
+
+    public static int getTargetLayer(
+        List<BannerPatternsComponent.Layer> bannerLayers,
+        GlowingLayersComponent glowingLayers,
+        boolean addGlowing
+    ) {
+        int targetLayer = bannerLayers.size();
+        for ( int i = bannerLayers.size(); i >= 0; i-- ) {
+            boolean isLayerGlowing = glowingLayers.isLayerGlowing( i );
+            if ( addGlowing && !isLayerGlowing ) return i;
+            if ( !addGlowing && isLayerGlowing ) return i;
+        }
+        return targetLayer;
     }
 
 }
