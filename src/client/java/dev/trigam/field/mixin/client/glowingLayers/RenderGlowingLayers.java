@@ -49,6 +49,24 @@ public class RenderGlowingLayers {
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/client/render/block/entity/BannerBlockEntityRenderer;renderLayer(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/model/ModelPart;Lnet/minecraft/client/util/SpriteIdentifier;Lnet/minecraft/util/DyeColor;)V",
+            ordinal = 0
+        ),
+        index = 2
+    )
+    private static int getBaseLight( int light ) {
+        if ( banner == null ) return light;
+        GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.getNullable( banner );
+        boolean isBaseGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( 0 );
+
+        if ( isBaseGlowing ) return 15728880;
+        else return light;
+    }
+
+    @ModifyArg(
+        method = "renderCanvas(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/model/ModelPart;Lnet/minecraft/client/util/SpriteIdentifier;ZLnet/minecraft/util/DyeColor;Lnet/minecraft/component/type/BannerPatternsComponent;ZZ)V",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/render/block/entity/BannerBlockEntityRenderer;renderLayer(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/model/ModelPart;Lnet/minecraft/client/util/SpriteIdentifier;Lnet/minecraft/util/DyeColor;)V",
             ordinal = 1
         ),
         index = 2
