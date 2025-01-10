@@ -17,7 +17,6 @@ import net.minecraft.client.render.entity.model.LoadedEntityModels;
 import net.minecraft.client.render.model.ModelBaker;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.RotationPropertyHelper;
@@ -27,9 +26,9 @@ public class HangingBannerRenderer implements BlockEntityRenderer<HangingBannerB
     public final HangingBannerModel bannerModel;
     public final BannerFlagModel flagModel;
 
-    public static final Identifier TEXTURE = Field.id("entity/banner/base/hanging_banner");
     public static final SpriteIdentifier SPRITE = new SpriteIdentifier(
-        TexturedRenderLayers.BANNER_PATTERNS_ATLAS_TEXTURE, TEXTURE
+        TexturedRenderLayers.BANNER_PATTERNS_ATLAS_TEXTURE,
+        Field.id("entity/banner/base/hanging_banner_base")
     );
 
     public HangingBannerRenderer( BlockEntityRendererFactory.Context context ) {
