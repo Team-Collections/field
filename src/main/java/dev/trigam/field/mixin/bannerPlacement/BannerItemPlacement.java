@@ -29,7 +29,7 @@ public class BannerItemPlacement {
             Direction side = context.getSide();
 
             if ( side == Direction.DOWN ) {
-                Block hangingBanner = HangingBannerBlock.getHangingBanner( banner.getColor() );
+                Block hangingBanner = HangingBannerBlock.getForColor( banner.getColor() );
                 BlockState state = hangingBanner.getPlacementState( context );
                 cir.setReturnValue( state );
             }
