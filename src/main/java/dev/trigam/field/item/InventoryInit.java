@@ -6,7 +6,7 @@ import net.minecraft.item.Items;
 
 public class InventoryInit {
 
-    public static void sort () {
+    public static void init () {
         ItemGroupEvents.modifyEntriesEvent( ItemGroups.INGREDIENTS ).register(content -> {
             content.addAfter( Items.GUSTER_BANNER_PATTERN, ItemInit.STAR_BANNER_PATTERN );
         });

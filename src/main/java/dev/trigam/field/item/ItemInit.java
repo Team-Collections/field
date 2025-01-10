@@ -8,11 +8,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-
 import java.util.function.Function;
 
 public class ItemInit {
-    public static final Item STAR_BANNER_PATTERN = registerItem( "star_banner_pattern",
+    public static final Item STAR_BANNER_PATTERN = registerItem(
+        "star_banner_pattern",
         settings -> new BannerPatternItem(
             BannerPatternTagInit.STAR_BANNER_PATTERN,
             settings
@@ -28,6 +28,10 @@ public class ItemInit {
         );
     }
 
-    public static void register () {}
+    public static RegistryKey<Item> getRegistryKey( String name ) {
+        return RegistryKey.of( RegistryKeys.ITEM, Field.id( name ) );
+    }
+
+    public static void init () {}
 
 }

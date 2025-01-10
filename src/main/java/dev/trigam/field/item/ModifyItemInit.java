@@ -22,7 +22,6 @@ public class ModifyItemInit {
     );
 
     public static void init() {
-
         DefaultItemComponentEvents.MODIFY.register( context -> {
             // Banner Stack Size
             if ( FieldConfig.bannerStackSize != 16 ) {

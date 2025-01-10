@@ -21,12 +21,13 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"template" {
+		"field" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
 	}
 
+	accessWidenerPath = file( "src/main/resources/field.accesswidener" )
 }
 
 fabricApi {
