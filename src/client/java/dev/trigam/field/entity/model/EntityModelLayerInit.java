@@ -30,7 +30,6 @@ public class EntityModelLayerInit {
 
         // Hanging Banner
         EntityModelLayerRegistry.registerModelLayer( HANGING_BANNER, HangingBannerModel::getTexturedModelData );
-        //EntityModelLayersAccessor.getLayers().add( HANGING_BANNER_CEILING_FLAG );
     }
 
     public static void init() {

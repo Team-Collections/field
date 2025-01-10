@@ -11,7 +11,7 @@ public class BannerFlagModel extends Model {
 
     public final ModelPart flag;
 
-    public BannerFlagModel( ModelPart root ) {
+    public BannerFlagModel ( ModelPart root ) {
         super( root, RenderLayer::getEntitySolid );
         this.flag = root.getChild( "flag" );
     }

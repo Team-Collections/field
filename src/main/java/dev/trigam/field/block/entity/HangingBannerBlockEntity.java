@@ -1,11 +1,9 @@
 package dev.trigam.field.block.entity;
 
 import dev.trigam.field.block.HangingBannerBlock;
-import net.minecraft.block.BannerBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 
@@ -28,12 +26,5 @@ public class HangingBannerBlockEntity extends BannerBlockEntity {
     @Override
     public BlockEntityType<?> getType() {
         return BlockEntityInit.HANGING_BANNER;
-    }
-
-    @Override
-    public ItemStack getPickStack() {
-        ItemStack itemStack = new ItemStack( BannerBlock.getForColor( this.getColorForState() ) );
-        itemStack.applyComponentsFrom( this.createComponentMap() );
-        return itemStack;
     }
 }

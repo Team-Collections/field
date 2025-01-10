@@ -28,10 +28,6 @@ public class ItemInit {
         );
     }
 
-    public static RegistryKey<Item> getRegistryKey( String name ) {
-        return RegistryKey.of( RegistryKeys.ITEM, Field.id( name ) );
-    }
-
     public static void init () {}
 
 }

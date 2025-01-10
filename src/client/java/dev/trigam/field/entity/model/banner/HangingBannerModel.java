@@ -8,7 +8,7 @@ import net.minecraft.client.render.RenderLayer;
 @Environment( EnvType.CLIENT )
 public class HangingBannerModel extends Model {
 
-    public HangingBannerModel(ModelPart root ) { super( root, RenderLayer::getEntitySolid ); }
+    public HangingBannerModel ( ModelPart root ) { super( root, RenderLayer::getEntitySolid ); }
 
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();

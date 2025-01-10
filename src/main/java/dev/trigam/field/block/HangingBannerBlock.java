@@ -45,33 +45,33 @@ public class HangingBannerBlock extends AbstractBannerBlock {
     public HangingBannerBlock( DyeColor dyeColor, Settings settings ) {
         super( dyeColor, settings );
         this.setDefaultState( ( this.stateManager.getDefaultState() )
-            .with(ROTATION, 0)
+            .with( ROTATION, 0 )
         );
-        COLORED_BANNERS.put(dyeColor, this);
+        COLORED_BANNERS.put( dyeColor, this) ;
     }
 
     @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos ) {
+    protected boolean canPlaceAt ( BlockState state, WorldView world, BlockPos pos ) {
         return world.getBlockState( pos.up() )
             .isSideSolid( world, pos.up(), Direction.DOWN, SideShapeType.CENTER );
     }
 
     @Override
-    public BlockEntity createBlockEntity( BlockPos pos, BlockState state ) {
+    public BlockEntity createBlockEntity ( BlockPos pos, BlockState state ) {
         return new HangingBannerBlockEntity( pos, state, this.getColor() );
     }
 
-    public VoxelShape getOutlineShape( BlockState state, BlockView world, BlockPos pos, ShapeContext context ) {
+    public VoxelShape getOutlineShape ( BlockState state, BlockView world, BlockPos pos, ShapeContext context ) {
         return SHAPE;
     }
 
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
+    public BlockState getPlacementState ( ItemPlacementContext ctx ) {
         return this.getDefaultState()
             .with( ROTATION, RotationPropertyHelper.fromYaw( ctx.getPlayerYaw() + 180.0F ) );
     }
 
-    protected BlockState getStateForNeighborUpdate( BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random ) {
-        return direction == Direction.UP && !state.canPlaceAt(world, pos)
+    protected BlockState getStateForNeighborUpdate ( BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random ) {
+        return direction == Direction.UP && !state.canPlaceAt( world, pos )
             ? Blocks.AIR.getDefaultState()
             : super.getStateForNeighborUpdate( state, world, tickView, pos, direction, neighborPos, neighborState, random );
     }

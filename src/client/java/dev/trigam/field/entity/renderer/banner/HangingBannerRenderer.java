@@ -28,13 +28,13 @@ public class HangingBannerRenderer implements BlockEntityRenderer<HangingBannerB
 
     public static final SpriteIdentifier SPRITE = new SpriteIdentifier(
         TexturedRenderLayers.BANNER_PATTERNS_ATLAS_TEXTURE,
-        Field.id("entity/banner/base/hanging_banner_base")
+        Field.id( "entity/banner/base/hanging_banner_base" )
     );
 
-    public HangingBannerRenderer( BlockEntityRendererFactory.Context context ) {
+    public HangingBannerRenderer ( BlockEntityRendererFactory.Context context ) {
         this( context.getLoadedEntityModels() );
     }
-    public HangingBannerRenderer(LoadedEntityModels models) {
+    public HangingBannerRenderer ( LoadedEntityModels models ) {
         this.bannerModel = new HangingBannerModel( models.getModelPart( EntityModelLayerInit.HANGING_BANNER ) );
         this.flagModel = new BannerFlagModel( models.getModelPart( EntityModelLayerInit.BANNER_FLAG ) );
     }
