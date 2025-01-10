@@ -71,7 +71,7 @@ public class HangingBannerBlock extends AbstractBannerBlock {
     }
 
     protected BlockState getStateForNeighborUpdate( BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random ) {
-        return direction == Direction.DOWN && !state.canPlaceAt(world, pos)
+        return direction == Direction.UP && !state.canPlaceAt(world, pos)
             ? Blocks.AIR.getDefaultState()
             : super.getStateForNeighborUpdate( state, world, tickView, pos, direction, neighborPos, neighborState, random );
     }
