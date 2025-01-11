@@ -4,10 +4,11 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [
         "bannerLayers.BannerDuplicateRecipeFix",
-        "BannerItemTooltip",
         "bannerLayers.LoomScreenHandlerFix",
         "bannerPlacement.BannerItemPlacement",
-        "bannerPlacement.WallHangingSignsConnect"
+        "bannerPlacement.WallHangingSignsConnect",
+        "tooltip.BannerItemTooltip",
+        "tooltip.ShieldItemTooltip"
     ],
     "injectors": {
         "defaultRequire": 1

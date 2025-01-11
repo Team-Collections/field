@@ -1,34 +1,22 @@
-package dev.trigam.field.mixin;
+package dev.trigam.field.util;
 
 import dev.trigam.field.component.GlowingLayersComponent;
 import dev.trigam.field.component.ItemComponentInit;
 import dev.trigam.field.config.FieldConfig;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.BannerPatternsComponent;
-import net.minecraft.item.BannerItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
+
 import java.util.ArrayList;
 import java.util.List;
 
-@Mixin( BannerItem.class )
-public class BannerItemTooltip {
+public class Tooltip {
 
-    @Redirect(
-        method = "appendTooltip",
-        at = @At(
-            value = "INVOKE",
-            target = "Lnet/minecraft/item/BannerItem;appendBannerTooltip(Lnet/minecraft/item/ItemStack;Ljava/util/List;)V"
-        )
-    )
-    private void appendBannerTooltip( ItemStack stack, List<Text> tooltip ) {
+    public static void appendBannerTooltip (ItemStack stack, List<Text> tooltip ) {
         BannerPatternsComponent patterns = stack.get( DataComponentTypes.BANNER_PATTERNS );
         GlowingLayersComponent glowingLayers = stack.get( ItemComponentInit.GLOWING_LAYERS );
 
@@ -44,16 +32,17 @@ public class BannerItemTooltip {
 
             if ( numLayers > 0 ) {
                 if ( baseGlowing ) tooltip.add( ScreenTexts.EMPTY );
-                tooltip.add( Text.translatable( "block.field.banner.patterns" ) );
+                tooltip.add( Text.translatable( "block.field.banner.patterns" ).formatted( Formatting.GRAY ) );
             }
 
             // Order with newest first
             for ( int i = 0; i < shownLayers; i++ ) {
                 BannerPatternsComponent.Layer layer = bannerLayers.get( i );
                 boolean layerGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( i + 1 );
-                MutableText layerTooltip = getLayerTooltip( layer, layerGlowing );
+                MutableText layerTooltip = Tooltip.getLayerTooltip( layer, layerGlowing );
                 tooltip.add( ScreenTexts.space().append( layerTooltip.formatted( Formatting.GRAY ) ) );
             }
+
             // If more than the tooltip layer limit, display the
             // number of remaining layers
             if ( remaining > 0 ) {
@@ -64,8 +53,7 @@ public class BannerItemTooltip {
         }
     }
 
-    @Unique
-    public MutableText getLayerTooltip(BannerPatternsComponent.Layer layer, boolean isGlowing ) {
+    public static MutableText getLayerTooltip(BannerPatternsComponent.Layer layer, boolean isGlowing ) {
         List<Text> parts = new ArrayList<>();
 
         parts.add( Text.translatable( "block.field.banner." + layer.color().getName() ) );
