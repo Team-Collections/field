@@ -6,7 +6,8 @@
         "bannerLayers.BannerDuplicateRecipeFix",
         "bannerLayers.BannerItemTooltip",
         "bannerLayers.LoomScreenHandlerFix",
-        "bannerPlacement.BannerItemPlacement"
+        "bannerPlacement.BannerItemPlacement",
+        "bannerPlacement.WallHangingSignsConnect"
     ],
     "injectors": {
         "defaultRequire": 1

@@ -82,7 +82,7 @@ public class WallHangingBannerBlock extends AbstractBannerBlock {
 
     public boolean canAttachTo ( WorldView world, BlockState state, BlockPos pos, Direction direction ) {
         BlockState blockState = world.getBlockState( pos );
-        return blockState.isIn( BlockTagInit.WALL_HANGING_BANNERS )
+        return blockState.isIn( BlockTagInit.WALL_HANGING_DECORATIONS )
             ? ( blockState.get( FACING ) ).getAxis().test( state.get( FACING ) )
             : blockState.isSideSolid( world, pos, direction, SideShapeType.FULL );
     }
