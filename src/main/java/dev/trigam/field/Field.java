@@ -32,8 +32,8 @@ public class Field implements ModInitializer {
 		InventoryInit.init();
 		ModifyItemInit.init();
 
-		ComponentInit.register();
-		ItemComponentInit.register();
+		ComponentInit.init();
+		ItemComponentInit.init();
 
 		BlockInit.init();
 		BlockEntityInit.init();

@@ -17,7 +17,7 @@ public class ComponentInit implements BlockComponentInitializer {
         return ComponentRegistry.getOrCreate( Field.id( id ), componentClass );
     }
 
-    public static void register () {}
+    public static void init () {}
 
     @Override
     public void registerBlockComponentFactories( BlockComponentFactoryRegistry registry ) {

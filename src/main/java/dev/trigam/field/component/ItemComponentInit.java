@@ -23,5 +23,5 @@ public class ItemComponentInit {
         );
     }
 
-    public static void register () {}
+    public static void init () {}
 }
