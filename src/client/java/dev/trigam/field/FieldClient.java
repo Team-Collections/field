@@ -1,5 +1,7 @@
 package dev.trigam.field;
 
+import dev.trigam.field.entity.model.EntityModelInit;
+import dev.trigam.field.entity.model.EntityModelLayerInit;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -15,6 +17,9 @@ public class FieldClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+
+		EntityModelInit.init();
+		EntityModelLayerInit.init();
 
 	}
 }
