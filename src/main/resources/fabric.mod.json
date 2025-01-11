@@ -56,7 +56,7 @@
 		{ "config": "field.client.mixins.json", "environment": "client" }
 	],
 
-	"accessWidener": "field.accessWidener",
+	"accessWidener": "field.accesswidener",
 
 	"depends": {
 		"fabricloader": ">=0.16.9",
