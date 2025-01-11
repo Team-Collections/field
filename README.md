@@ -34,4 +34,4 @@ As a simple quality of life change, banners now have a default stack size of 64.
 ### Loom Tooltips
 When hovering over a banner pattern in the loom, there is now a tooltip, containing the name and ID of the pattern. This can be disabled in the config in order to restore the vanilla behavior.
 
-<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Loom%20Tooltip.png" alt="An image of the loom screen. The banner pattern \"Pall Chief\" is being hovered over, showing a tooltip./>
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Loom%20Tooltip.png" alt="An image of the loom screen. The banner pattern \"Pall Chief\" is being hovered over, showing a tooltip."/>
