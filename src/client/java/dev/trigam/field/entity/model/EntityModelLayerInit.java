@@ -3,6 +3,7 @@ package dev.trigam.field.entity.model;
 import dev.trigam.field.Field;
 import dev.trigam.field.entity.model.banner.BannerFlagModel;
 import dev.trigam.field.entity.model.banner.HangingBannerModel;
+import dev.trigam.field.entity.model.banner.WallHangingBannerModel;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 
@@ -19,6 +20,10 @@ public class EntityModelLayerInit {
         Field.id( "hanging_banner" ),
         "main"
     );
+    public static final EntityModelLayer WALL_HANGING_BANNER = new EntityModelLayer(
+        Field.id( "wall_hanging_banner" ),
+        "main"
+    );
 
     // Hanging Wall Banner
 
@@ -30,6 +35,7 @@ public class EntityModelLayerInit {
 
         // Hanging Banner
         EntityModelLayerRegistry.registerModelLayer( HANGING_BANNER, HangingBannerModel::getTexturedModelData );
+        EntityModelLayerRegistry.registerModelLayer( WALL_HANGING_BANNER, WallHangingBannerModel::getTexturedModelData );
     }
 
     public static void init() {

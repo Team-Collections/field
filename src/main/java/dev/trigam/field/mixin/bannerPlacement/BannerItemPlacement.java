@@ -1,6 +1,8 @@
 package dev.trigam.field.mixin.bannerPlacement;
 
+import dev.trigam.field.Field;
 import dev.trigam.field.block.HangingBannerBlock;
+import dev.trigam.field.block.WallHangingBannerBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.BannerItem;
@@ -27,9 +29,25 @@ public class BannerItemPlacement {
         VerticallyAttachableBlockItem thiz = (VerticallyAttachableBlockItem) (Object) this;
         if ( thiz instanceof BannerItem banner ) {
             Direction side = context.getSide();
+            Direction playerFacing = context.getPlayer().getHorizontalFacing();
 
-            if ( side == Direction.DOWN ) {
+            Field.LOGGER.info( "Placing on {}", side );
+            Field.LOGGER.info( "Looking at {}", playerFacing );
+
+            // Floor Banner
+            if ( side == Direction.UP ) { return; }
+            // Hanging Banner
+            else if ( side == Direction.DOWN ) {
                 Block hangingBanner = HangingBannerBlock.getForColor( banner.getColor() );
+                BlockState state = hangingBanner.getPlacementState( context );
+                cir.setReturnValue( state );
+            }
+            // Wall Banner
+            else if ( side == playerFacing.getOpposite() ) { return; }
+            // Wall Hanging Banner
+            else {
+                Field.LOGGER.info( "Wall Hanging" );
+                Block hangingBanner = WallHangingBannerBlock.getForColor( banner.getColor() );
                 BlockState state = hangingBanner.getPlacementState( context );
                 cir.setReturnValue( state );
             }
