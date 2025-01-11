@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/logos/Logo%20-%20Field.png" />
+
 <div align="center">
 
 # Field
@@ -12,18 +14,29 @@ A Minecraft mod that breathes some new wind into the Banner system, adding new p
 Field adds many, many new banner patterns, allowing for even greater customizability. All of them attempt to be in-line with heraldry - the system banner patterns are based off of, so they should fit well with the rest of the banner patterns.
 
 ### Renamed Banner Patterns
-Some of the vanilla banner patterns didn't fit into the naming scheme of heraldry, so they have been updated to fit in.
+Some of the vanilla banner patterns didn't fit into the naming scheme of heraldry (read above), so they have been updated to fit in. None of the designs have been significantly changed, only the names.
 
 ### More Banner Patterns
 Having a limit of only 6 banner patterns is both arbitrary and incredibly limiting. Now, there's a default limit of 32 patterns, which is configurable.
 
 To avoid having a mile-long tooltip, the tooltip will only display, by default, the most recent 8, with the rest being trimmed. The limit for this is also configurable.
 
-### Glowing Banners
-If a Glow Ink Sac is used on a Banner, the top-most layer will become glowing, similar to a sign. Using a normal Ink Sac will un-do this.
+### Hanging Banners
+Banners can now be placed on either the bottom of a block or the side of a block, similar to hanging signs. They can also connect with hanging signs, allowing for creative decorations.
+
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Hanging%20Banners%20Tavern.png" alt="Two banners hanging above the entrance to a medieval tavern. They're both identical blue banners with a thin, yellow outline, and have a shield shape in the middle."/>
+
+### Wearable Banners
+Even in vanilla, banners have functionality for rendering on the player's head. Now, banners are able to simply be placed into your helmet slot.
 
 ### Stackable Banners
 As a simple quality of life change, banners now have a default stack size of 64. Once again, this is configurable.
 
 ### Loom Tooltips
 When hovering over a banner pattern in the loom, there is now a tooltip, containing the name and ID of the pattern. This can be disabled in the config in order to restore the vanilla behavior.
+
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Loom%20Tooltip.png" alt="An image of the loom screen. The banner pattern 'Pall Chief' is being hovered over, showing a tooltip."/>
+
+## Credits
+- [BannersEverywhere](https://modrinth.com/mod/banners-everywhere), by [anweisen](https://modrinth.com/user/anweisen)
+- [TipOfTheLoom](https://modrinth.com/mod/tip-of-the-loom), by [Darkhax](https://modrinth.com/user/Darkhax)

@@ -5,7 +5,9 @@
     "mixins": [
         "bannerLayers.BannerDuplicateRecipeFix",
         "BannerItemTooltip",
-        "bannerLayers.LoomScreenHandlerFix"
+        "bannerLayers.LoomScreenHandlerFix",
+        "bannerPlacement.BannerItemPlacement",
+        "bannerPlacement.WallHangingSignsConnect"
     ],
     "injectors": {
         "defaultRequire": 1
