@@ -20,6 +20,9 @@ bin/
 .classpath
 .project
 
+# Windows
+*.ini
+
 # MacOS
 *.DS_Store
 
