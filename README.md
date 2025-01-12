@@ -28,6 +28,8 @@ Banners can now be placed on either the bottom of a block or the side of a block
 ### Wearable Banners
 Even in vanilla, banners have functionality for rendering on the player's head. Now, banners are able to simply be placed into your helmet slot.
 
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Trigam%20Captain.png" alt="A Minecraft player wearing an Ominous Banner on their head"/>
+
 ### Stackable Banners
 As a simple quality of life change, banners now have a default stack size of 64. Once again, this is configurable.
 
@@ -41,7 +43,7 @@ Banners, rather than the tooltip being an unlabeled list of banner patterns, now
 
 As a bonus, this fixes [MC-217525](https://bugs.mojang.com/browse/MC-217525).
 
-<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Reworked%20Tooltip.png"/>
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Reworked%20Tooltip.png" alt="A Shield being hovered over, with a reworked tooltip describing it. The Shield has a Pink Banner, with the patterns: Light Blue Pale Sinister, Light Blue Pale Dexter, and White Pale. The Shield is enchanted with: Unbreaking 3 and Mending."/>
 
 ## Credits
 - [BannersEverywhere](https://modrinth.com/mod/banners-everywhere), by [anweisen](https://modrinth.com/user/anweisen)
