@@ -37,6 +37,13 @@ When hovering over a banner pattern in the loom, there is now a tooltip, contain
 
 <img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Loom%20Tooltip.png" alt="An image of the loom screen. The banner pattern 'Pall Chief' is being hovered over, showing a tooltip."/>
 
+### Updated Banner Tooltip
+Banners, rather than the tooltip being an unlabeled list of banner patterns, now has a tooltip more in-line with the modern style of tooltip. The list now is titled "Patterns", and indented, similar to the tooltip of Smithing Templates.
+
+As a bonus, this fixes [MC-217525](https://bugs.mojang.com/browse/MC-217525).
+
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Reworked%20Tooltip.png"/>
+
 ## Credits
 - [BannersEverywhere](https://modrinth.com/mod/banners-everywhere), by [anweisen](https://modrinth.com/user/anweisen)
 - [TipOfTheLoom](https://modrinth.com/mod/tip-of-the-loom), by [Darkhax](https://modrinth.com/user/Darkhax)

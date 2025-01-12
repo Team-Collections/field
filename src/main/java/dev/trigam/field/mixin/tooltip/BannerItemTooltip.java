@@ -22,5 +22,4 @@ public class BannerItemTooltip {
     private void appendBannerTooltip ( ItemStack stack, List<Text> tooltip ) {
         Tooltip.appendBannerTooltip( stack, tooltip );
     }
-
 }
