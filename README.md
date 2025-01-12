@@ -53,4 +53,4 @@ Banner Pattern tooltips have also been changed to have more simplified translati
 - [TipOfTheLoom](https://modrinth.com/mod/tip-of-the-loom), by [Darkhax](https://modrinth.com/user/Darkhax)
 
 # Incompatabilities
-- ["Limitless" Banners](https://modrinth.com/mod/%22limitless%22-banners) by [Mike](https://modrinth.com/user/Mike)
+- ["Limitless" Banners](https://modrinth.com/mod/%22limitless%22-banners), by [Mike](https://modrinth.com/user/Mike)
