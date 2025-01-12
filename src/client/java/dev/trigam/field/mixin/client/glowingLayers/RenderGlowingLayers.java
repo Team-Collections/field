@@ -1,6 +1,7 @@
 package dev.trigam.field.mixin.client.glowingLayers;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.trigam.field.FieldClient;
 import dev.trigam.field.component.ComponentInit;
 import dev.trigam.field.component.GlowingLayersComponent;
 import net.minecraft.block.entity.BannerBlockEntity;
@@ -8,7 +9,6 @@ import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BannerBlockEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -18,9 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin( BannerBlockEntityRenderer.class )
 public class RenderGlowingLayers {
 
-    @Unique
-    private static BannerBlockEntity banner;
-
     // Banner context
     @Inject(
         method = "render(Lnet/minecraft/block/entity/BannerBlockEntity;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;II)V",
@@ -28,7 +25,7 @@ public class RenderGlowingLayers {
     )
     private void getBannerData( BannerBlockEntity bannerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci ) {
         if ( bannerBlockEntity.hasWorld() ) {
-            banner = bannerBlockEntity;
+            FieldClient.setGlowingContext( bannerBlockEntity );
         }
     }
 
@@ -41,7 +38,7 @@ public class RenderGlowingLayers {
         )
     )
     private void clearBannerData( BannerBlockEntity bannerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci ) {
-        banner = null;
+        FieldClient.setGlowingContext( null );
     }
 
     @ModifyArg(
@@ -54,8 +51,8 @@ public class RenderGlowingLayers {
         index = 2
     )
     private static int getBaseLight( int light ) {
-        if ( banner == null ) return light;
-        GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.getNullable( banner );
+        if ( FieldClient.glowingContext == null ) return light;
+        GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.getNullable( FieldClient.glowingContext );
         boolean isBaseGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( 0 );
 
         if ( isBaseGlowing ) return 15728880;
@@ -72,8 +69,8 @@ public class RenderGlowingLayers {
         index = 2
     )
     private static int getLayerLight( int light, @Local( ordinal = 2 ) int layerIndex ) {
-        if ( banner == null ) return light;
-        GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.getNullable( banner );
+        if ( FieldClient.glowingContext == null ) return light;
+        GlowingLayersComponent glowingLayers = ComponentInit.GLOWING_LAYERS.getNullable( FieldClient.glowingContext );
         boolean isLayerGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( layerIndex + 1 );
 
         if ( isLayerGlowing ) return 15728880;

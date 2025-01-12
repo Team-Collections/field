@@ -1,6 +1,7 @@
 package dev.trigam.field.entity.renderer.banner;
 
 import dev.trigam.field.Field;
+import dev.trigam.field.FieldClient;
 import dev.trigam.field.block.entity.HangingBannerBlockEntity;
 import dev.trigam.field.entity.model.EntityModelLayerInit;
 import dev.trigam.field.entity.model.banner.BannerFlagModel;
@@ -88,6 +89,7 @@ public class HangingBannerRenderer implements BlockEntityRenderer<HangingBannerB
         VertexConsumer vertexConsumer = ModelBaker.BANNER_BASE.getVertexConsumer( vertexProvider, RenderLayer::getEntitySolid );
         this.flagModel.render( matrices, vertexConsumer, light, overlay );
 
+        FieldClient.setGlowingContext( banner );
         BannerBlockEntityRenderer.renderCanvas(
             matrices, vertexProvider, light, overlay,
             this.flagModel.getRootPart(), SPRITE, true,
