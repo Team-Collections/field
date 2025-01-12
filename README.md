@@ -56,6 +56,7 @@ Banner Pattern tooltips have also been changed to have more simplified translati
 Field has explicit compatability with:
 - [Banner Text](https://modrinth.com/datapack/banner-text), by [Snuzzle](https://modrinth.com/user/Snuzzle)
 - [Muki's Extra Banners](https://modrinth.com/datapack/mukis-extra-banners), by [MukiTanuku](https://modrinth.com/user/MukiTanuki)
+- [Many More Banners](https://modrinth.com/datapack/many-more-banners), by [moxvallix](https://modrinth.com/user/moxvallix)
 
 # Incompatabilities
 Field isn't compatible with:

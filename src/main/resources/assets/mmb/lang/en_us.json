@@ -1,0 +1,44 @@
+{
+	"block.minecraft.banner.mmb.chequered": "Checky",
+	"block.minecraft.banner.mmb.circle_tiles": "Annuletty",
+	"block.minecraft.banner.mmb.cogs": "Cogs",
+	"block.minecraft.banner.mmb.curtains": "Curtains",
+	"block.minecraft.banner.mmb.fancy": "Bordure Wavy",
+	"block.minecraft.banner.mmb.tattered": "Tattered",
+
+	"block.minecraft.banner.mmb.blam": "Blam",
+	"block.minecraft.banner.mmb.ribs": "Ribs",
+	"block.minecraft.banner.mmb.pillager": "Pillager Charge",
+	"block.minecraft.banner.mmb.villager": "Villager Charge",
+	"block.minecraft.banner.mmb.ghast": "Ghast Charge",
+
+	"block.minecraft.banner.mmb.sun": "Sun Charge",
+	"block.minecraft.banner.mmb.moon": "Moon Charge",
+	"block.minecraft.banner.mmb.peace": "Peace Charge",
+	"block.minecraft.banner.mmb.yin_yang": "Balance Charge",
+	"block.minecraft.banner.mmb.knot": "Knot Charge",
+	
+	"block.minecraft.banner.mmb.pumpkin": "Pumpkin Charge",
+	"block.minecraft.banner.mmb.horn": "Horn Charge",
+
+	"block.minecraft.banner.mmb.hearts": "Hearts Charge",
+	"block.minecraft.banner.mmb.clubs": "Clubs Charge",
+	"block.minecraft.banner.mmb.diamonds": "Diamonds Charge",
+	"block.minecraft.banner.mmb.spades": "Spades Charge",
+	"block.minecraft.banner.mmb.anchor": "Anchor Charge",
+	"block.minecraft.banner.mmb.eye": "Eye Charge",
+	"block.minecraft.banner.mmb.companion": "Companion Charge",
+	"block.minecraft.banner.mmb.revolution": "Revolution Charge",
+	"block.minecraft.banner.mmb.emoji": "Joyful Charge",
+
+	"block.minecraft.banner.mmb.castle": "Castle Charge",
+	"block.minecraft.banner.mmb.palace": "Palace Charge",
+	"block.minecraft.banner.mmb.pyramid": "Pyramid Charge",
+	"block.minecraft.banner.mmb.tower": "Tower Charge",
+	
+	"block.minecraft.banner.mmb.crown": "Crown Charge",
+	"block.minecraft.banner.mmb.hammer": "Hammer Charge",
+	"block.minecraft.banner.mmb.shield": "Shield Charge",
+	"block.minecraft.banner.mmb.sword": "Sword Charge",
+	"block.minecraft.banner.mmb.trident": "Trident Charge"
+}
