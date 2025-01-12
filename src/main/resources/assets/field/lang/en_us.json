@@ -38,8 +38,8 @@
 		"block.field.banner.pink": "Pink",
 
 	"_FIELD_VARIATIONS_": "",
-		"block.field.banner.gradient_left_to_right": "Grady in Fess Dexter",
-		"block.field.banner.gradient_right_to_left": "Grady in Fess Sinister",
+		"block.field.banner.gradient_left_to_right": "Grady Dexter",
+		"block.field.banner.gradient_right_to_left": "Grady Sinister",
 		"block.field.banner.gradient_stripe_horizontal": "Grady per Fess",
 		"block.field.banner.gradient_stripe_vertical": "Grady per Pale",
 		"block.field.banner.gradient_radial_inner": "Grady in Annulo",
@@ -84,6 +84,6 @@
 		"block.field.banner.label_bottom": "Label Base",
 
 	"_CHARGES_": "",
-		"item.field.star_banner_pattern": "Star Charge Banner Pattern",
-		"block.field.banner.star": "Star Charge"
+		"item.field.star_banner_pattern": "Mullet Charge Banner Pattern",
+		"block.field.banner.star": "Mullet Charge"
 }
