@@ -47,3 +47,4 @@ As a bonus, this fixes [MC-217525](https://bugs.mojang.com/browse/MC-217525).
 ## Credits
 - [BannersEverywhere](https://modrinth.com/mod/banners-everywhere), by [anweisen](https://modrinth.com/user/anweisen)
 - [TipOfTheLoom](https://modrinth.com/mod/tip-of-the-loom), by [Darkhax](https://modrinth.com/user/Darkhax)
+- [Glow Banners](https://modrinth.com/mod/glow-banners), by [UltrusBot](https://modrinth.com/user/UltrusBot)
