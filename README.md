@@ -13,6 +13,9 @@ A Minecraft mod that breathes some new wind into the Banner system, adding new p
 ## New Banner Patterns
 Field adds many, many new banner patterns, allowing for even greater customizability. All of them attempt to be in-line with heraldry - the system banner patterns are based off of, so they should fit well with the rest of the banner patterns.
 
+## Retextured Banners and Patterns
+The banner has been retextured to be a little less noisy and clean. Along with this, many of the vanilla banner patterns have also been retextured, smoothing them out. There should hopefully be little difference to your existing designs.
+
 ## Renamed Banner Patterns
 Some of the vanilla banner patterns didn't fit into the naming scheme of heraldry (read above), so they have been updated to fit in. None of the designs have been significantly changed, only the names.
 
