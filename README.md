@@ -48,9 +48,15 @@ Banner Pattern tooltips have also been changed to have more simplified translati
 
 <img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Reworked%20Tooltip.png" alt="A Shield being hovered over, with a reworked tooltip describing it. The Shield has a Pink Banner, with the patterns: Light Blue Pale Sinister, Light Blue Pale Dexter, and White Pale. The Shield is enchanted with: Unbreaking 3 and Mending."/>
 
+# Compatabilities
+Field has explicit compatability with:
+- [Banner Text](https://modrinth.com/datapack/banner-text), by [Snuzzle](https://modrinth.com/user/Snuzzle)
+- [Muki's Extra Banners](https://modrinth.com/datapack/mukis-extra-banners), by [MukiTanuku](https://modrinth.com/user/MukiTanuki)
+
+# Incompatabilities
+Field isn't compatible with:
+- ["Limitless" Banners](https://modrinth.com/mod/%22limitless%22-banners), by [Mike](https://modrinth.com/user/Mike)
+
 # Credits
 - [BannersEverywhere](https://modrinth.com/mod/banners-everywhere), by [anweisen](https://modrinth.com/user/anweisen)
 - [TipOfTheLoom](https://modrinth.com/mod/tip-of-the-loom), by [Darkhax](https://modrinth.com/user/Darkhax)
-
-# Incompatabilities
-- ["Limitless" Banners](https://modrinth.com/mod/%22limitless%22-banners), by [Mike](https://modrinth.com/user/Mike)
