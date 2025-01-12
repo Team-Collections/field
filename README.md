@@ -13,6 +13,8 @@ A Minecraft mod that breathes some new wind into the Banner system, adding new p
 ## New Banner Patterns
 Field adds many, many new banner patterns, allowing for even greater customizability. All of them attempt to be in-line with heraldry - the system banner patterns are based off of, so they should fit well with the rest of the banner patterns.
 
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Banners.png" alt="A collage of different banners in different environments. The first showcases the LGBTQ flag, Trans flag, and Nonbinary flag in a bedroom. The second showcases red and yellow banners on a desert house. The third showcases blue banners with a yellow shield hanging above a medieval tavern. The last showcases a wide variety of random banners in a medieval textile mill."/>
+
 ## Retextured Banners and Patterns
 The banner has been retextured to be a little less noisy and clean. Along with this, many of the vanilla banner patterns have also been retextured, smoothing them out. There should hopefully be little difference to your existing designs.
 
