@@ -7,44 +7,50 @@
 </div>
 A Minecraft mod that breathes some new wind into the Banner system, adding new patterns, features, and removing limits. Let your creativity fly!
 
-## Features
+# Features
 
-### New Banner Patterns
+## New Banner Patterns
 Field adds many, many new banner patterns, allowing for even greater customizability. All of them attempt to be in-line with heraldry - the system banner patterns are based off of, so they should fit well with the rest of the banner patterns.
 
-### Renamed Banner Patterns
+## Renamed Banner Patterns
 Some of the vanilla banner patterns didn't fit into the naming scheme of heraldry (read above), so they have been updated to fit in. None of the designs have been significantly changed, only the names.
 
-### More Banner Patterns
+## More Banner Patterns
 Having a limit of only 6 banner patterns is both arbitrary and incredibly limiting. Now, there's a default limit of 32 patterns, which is configurable.
 
 To avoid having a mile-long tooltip, the tooltip will only display, by default, the most recent 8, with the rest being trimmed. The limit for this is also configurable.
 
-### Hanging Banners
+## Hanging Banners
 Banners can now be placed on either the bottom of a block or the side of a block, similar to hanging signs. They can also connect with hanging signs, allowing for creative decorations.
 
 <img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Hanging%20Banners%20Tavern.png" alt="Two banners hanging above the entrance to a medieval tavern. They're both identical blue banners with a thin, yellow outline, and have a shield shape in the middle."/>
 
-### Wearable Banners
+## Wearable Banners
 Even in vanilla, banners have functionality for rendering on the player's head. Now, banners are able to simply be placed into your helmet slot.
 
 <img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Trigam%20Captain.png" alt="A Minecraft player wearing an Ominous Banner on their head."/>
 
-### Stackable Banners
+## Stackable Banners
 As a simple quality of life change, banners now have a default stack size of 64. Once again, this is configurable.
 
-### Loom Tooltips
+## Loom Tooltips
 When hovering over a banner pattern in the loom, there is now a tooltip, containing the name and ID of the pattern. This can be disabled in the config in order to restore the vanilla behavior.
 
 <img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Loom%20Tooltip.png" alt="An image of the loom screen. The banner pattern 'Pall Chief' is being hovered over, showing a tooltip."/>
 
-### Updated Banner Tooltip
+## Updated Banner Tooltip
 Banners, rather than the tooltip being an unlabeled list of banner patterns, now has a tooltip more in-line with the modern style of tooltip. The list now is titled "Patterns", and indented, similar to the tooltip of Smithing Templates.
 
 As a bonus, this fixes [MC-217525](https://bugs.mojang.com/browse/MC-217525).
 
+### Notice
+Banner Pattern tooltips have also been changed to have more simplified translations. Since this changes the translation key, this will break a lot of other custom banner patterns' translations. **Reach out on the Discord to request custom translations be added for your datapack/mod!**
+
 <img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Reworked%20Tooltip.png" alt="A Shield being hovered over, with a reworked tooltip describing it. The Shield has a Pink Banner, with the patterns: Light Blue Pale Sinister, Light Blue Pale Dexter, and White Pale. The Shield is enchanted with: Unbreaking 3 and Mending."/>
 
-## Credits
+# Credits
 - [BannersEverywhere](https://modrinth.com/mod/banners-everywhere), by [anweisen](https://modrinth.com/user/anweisen)
 - [TipOfTheLoom](https://modrinth.com/mod/tip-of-the-loom), by [Darkhax](https://modrinth.com/user/Darkhax)
+
+# Incompatabilities
+- ["Limitless" Banners](https://modrinth.com/mod/%22limitless%22-banners) by [Mike](https://modrinth.com/user/Mike)
