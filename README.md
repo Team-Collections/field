@@ -28,7 +28,7 @@ Banners can now be placed on either the bottom of a block or the side of a block
 ### Wearable Banners
 Even in vanilla, banners have functionality for rendering on the player's head. Now, banners are able to simply be placed into your helmet slot.
 
-<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Trigam%20Captain.png" alt="A Minecraft player wearing an Ominous Banner on their head"/>
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Trigam%20Captain.png" alt="A Minecraft player wearing an Ominous Banner on their head."/>
 
 ### Stackable Banners
 As a simple quality of life change, banners now have a default stack size of 64. Once again, this is configurable.
