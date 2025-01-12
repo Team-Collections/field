@@ -23,10 +23,12 @@ The banner has been retextured to be a little less noisy and clean. Along with t
 ## Renamed Banner Patterns
 Some of the vanilla banner patterns didn't fit into the naming scheme of heraldry (read above), so they have been updated to fit in. None of the designs have been significantly changed, only the names.
 
-## More Banner Patterns
-Having a limit of only 6 banner patterns is both arbitrary and incredibly limiting. Now, there's a default limit of 32 patterns, which is configurable.
+## More Banner Layers
+Having a limit of only 6 banner layers is both arbitrary and incredibly limiting. Now, there's a default limit of 32 layers, which is configurable.
 
-To avoid having a mile-long tooltip, the tooltip will only display, by default, the most recent 8, with the rest being trimmed. The limit for this is also configurable.
+To avoid having a mile-long tooltip, the tooltip will only display, by default, the most recent 8 layers, with the rest being trimmed. The limit for this is also configurable.
+
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/More%20Banner%20Layers.png" alt="A banner being hovered over, showing a tooltip describing it. The banner has the patterns: Blue Grady Base, Blue Grady Chief, Blue Bordure, Blue Per Fess Base, Blue Per Pale Sinister, Blue Per Fess Chief, Blue Per Pale Dexter, Blue Fusil, and with 24 more being trimmed."/>
 
 ## Hanging Banners
 Banners can now be placed on either the bottom of a block or the side of a block, similar to hanging signs. They can also connect with hanging signs, allowing for creative decorations.
@@ -40,6 +42,8 @@ Even in vanilla, banners have functionality for rendering on the player's head. 
 
 ## Stackable Banners
 As a simple quality of life change, banners now have a default stack size of 64. Once again, this is configurable.
+
+<img src="https://raw.githubusercontent.com/Team-Collections/.github/refs/heads/main/assets/showcase/Stackable%20Banners.png" alt="An image of a stack of 64 banners, showing that they're now stackable to 64."/>
 
 ## Loom Tooltips
 When hovering over a banner pattern in the loom, there is now a tooltip, containing the name and ID of the pattern. This can be disabled in the config in order to restore the vanilla behavior.
