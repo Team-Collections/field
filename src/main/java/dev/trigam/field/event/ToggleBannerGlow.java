@@ -1,7 +1,7 @@
 package dev.trigam.field.event;
 
-import dev.trigam.field.attachments.AttachmentInit;
 import dev.trigam.field.component.GlowingLayersComponent;
+import dev.trigam.field.impl.FieldBannerBlockEntity;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
@@ -37,10 +37,7 @@ public class ToggleBannerGlow {
         if ( blockEntity instanceof BannerBlockEntity banner ) {
             // Layer data
             List<BannerPatternsComponent.Layer> bannerLayers = banner.getPatterns().layers();
-//            GlowingLayersComponent glowingLayers = banner.getAttachedOrCreate(
-//                AttachmentInit.BANNER_GLOWING_LAYERS
-//            );
-//            glowingLayers.syncFromAttachment( banner );
+            GlowingLayersComponent glowingLayers = ((FieldBannerBlockEntity) banner).field$getGlowingLayers();
 
             int targetLayer = getTargetLayer( bannerLayers, glowingLayers, addGlowing );
             boolean isLayerGlowing = glowingLayers.isLayerGlowing( targetLayer );

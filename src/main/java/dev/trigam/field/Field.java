@@ -1,9 +1,8 @@
 package dev.trigam.field;
 
-import dev.trigam.field.attachments.AttachmentInit;
-import dev.trigam.field.component.ItemComponentInit;
 import dev.trigam.field.block.BlockInit;
 import dev.trigam.field.block.entity.BlockEntityInit;
+import dev.trigam.field.component.ItemComponentInit;
 import dev.trigam.field.config.FieldConfig;
 import dev.trigam.field.event.EventInit;
 import dev.trigam.field.item.InventoryInit;
@@ -33,7 +32,6 @@ public class Field implements ModInitializer {
 		ModifyItemInit.init();
 
 		ItemComponentInit.init();
-		AttachmentInit.init();
 
 		BlockInit.init();
 		BlockEntityInit.init();

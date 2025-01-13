@@ -2,8 +2,8 @@ package dev.trigam.field.mixin.client.glowingLayers;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.trigam.field.FieldClient;
-import dev.trigam.field.attachments.AttachmentInit;
 import dev.trigam.field.component.GlowingLayersComponent;
+import dev.trigam.field.impl.FieldBannerBlockEntity;
 import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BannerBlockEntityRenderer;
@@ -52,10 +52,8 @@ public class RenderGlowingLayers {
     )
     private static int getBaseLight( int light ) {
         if ( FieldClient.glowingContext == null ) return light;
-//        GlowingLayersComponent glowingLayers = FieldClient.glowingContext.getAttachedOrElse(
-//            AttachmentInit.BANNER_GLOWING_LAYERS,
-//            new GlowingLayersComponent()
-//        );
+
+        GlowingLayersComponent glowingLayers = ((FieldBannerBlockEntity) FieldClient.glowingContext).field$getGlowingLayers();
         boolean isBaseGlowing = glowingLayers.isLayerGlowing( 0 );
 
         if ( isBaseGlowing ) return 15728880;
@@ -73,10 +71,7 @@ public class RenderGlowingLayers {
     )
     private static int getLayerLight( int light, @Local( ordinal = 2 ) int layerIndex ) {
         if ( FieldClient.glowingContext == null ) return light;
-        GlowingLayersComponent glowingLayers = FieldClient.glowingContext.getAttachedOrElse(
-                AttachmentInit.BANNER_GLOWING_LAYERS,
-                new GlowingLayersComponent()
-        );
+        GlowingLayersComponent glowingLayers = ((FieldBannerBlockEntity) FieldClient.glowingContext).field$getGlowingLayers();
         boolean isLayerGlowing = glowingLayers.isLayerGlowing( layerIndex + 1 );
 
         if ( isLayerGlowing ) return 15728880;

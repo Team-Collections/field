@@ -7,6 +7,7 @@
         "bannerLayers.LoomScreenHandlerFix",
         "bannerPlacement.BannerItemPlacement",
         "bannerPlacement.WallHangingSignsConnect",
+        "component.BannerEntityComponents",
         "tooltip.BannerItemTooltip",
         "tooltip.ShieldItemTooltip"
     ],
