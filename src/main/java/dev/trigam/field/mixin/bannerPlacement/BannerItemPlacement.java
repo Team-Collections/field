@@ -31,9 +31,6 @@ public class BannerItemPlacement {
             Direction side = context.getSide();
             Direction playerFacing = context.getPlayer().getHorizontalFacing();
 
-            Field.LOGGER.info( "Placing on {}", side );
-            Field.LOGGER.info( "Looking at {}", playerFacing );
-
             // Floor Banner
             if ( side == Direction.UP ) { return; }
             // Hanging Banner
