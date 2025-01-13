@@ -29,6 +29,7 @@ public class ToggleBannerGlow {
         ItemStack usedItem = player.getStackInHand( hand );
         BlockPos pos = result.getBlockPos();
         BlockEntity blockEntity = world.getBlockEntity( pos );
+
         // Used item
         boolean addGlowing = usedItem.isOf( Items.GLOW_INK_SAC );
         boolean removeGlowing = usedItem.isOf( Items.INK_SAC );
