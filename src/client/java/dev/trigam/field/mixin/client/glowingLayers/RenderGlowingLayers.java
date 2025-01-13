@@ -52,10 +52,10 @@ public class RenderGlowingLayers {
     )
     private static int getBaseLight( int light ) {
         if ( FieldClient.glowingContext == null ) return light;
-        GlowingLayersComponent glowingLayers = FieldClient.glowingContext.getAttachedOrElse(
-            AttachmentInit.BANNER_GLOWING_LAYERS,
-            new GlowingLayersComponent()
-        );
+//        GlowingLayersComponent glowingLayers = FieldClient.glowingContext.getAttachedOrElse(
+//            AttachmentInit.BANNER_GLOWING_LAYERS,
+//            new GlowingLayersComponent()
+//        );
         boolean isBaseGlowing = glowingLayers.isLayerGlowing( 0 );
 
         if ( isBaseGlowing ) return 15728880;

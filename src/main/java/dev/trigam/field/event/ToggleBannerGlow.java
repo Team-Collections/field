@@ -37,10 +37,10 @@ public class ToggleBannerGlow {
         if ( blockEntity instanceof BannerBlockEntity banner ) {
             // Layer data
             List<BannerPatternsComponent.Layer> bannerLayers = banner.getPatterns().layers();
-            GlowingLayersComponent glowingLayers = banner.getAttachedOrCreate(
-                AttachmentInit.BANNER_GLOWING_LAYERS
-            );
-            glowingLayers.syncFromAttachment( banner );
+//            GlowingLayersComponent glowingLayers = banner.getAttachedOrCreate(
+//                AttachmentInit.BANNER_GLOWING_LAYERS
+//            );
+//            glowingLayers.syncFromAttachment( banner );
 
             int targetLayer = getTargetLayer( bannerLayers, glowingLayers, addGlowing );
             boolean isLayerGlowing = glowingLayers.isLayerGlowing( targetLayer );
@@ -64,7 +64,7 @@ public class ToggleBannerGlow {
             );
             player.incrementStat( Stats.USED.getOrCreateStat( usedItem.getItem() ) );
 
-            glowingLayers.syncFromAttachment( banner );
+            //glowingLayers.syncFromAttachment( banner );
             return ActionResult.SUCCESS_SERVER;
         }
         return ActionResult.PASS;

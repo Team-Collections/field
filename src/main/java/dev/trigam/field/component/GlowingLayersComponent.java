@@ -1,10 +1,7 @@
 package dev.trigam.field.component;
 
 import com.mojang.serialization.Codec;
-import dev.trigam.field.attachments.AttachmentInit;
 import io.netty.buffer.ByteBuf;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.component.ComponentMap;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import java.util.ArrayList;
@@ -38,19 +35,5 @@ public class GlowingLayersComponent {
         else layers.remove( Integer.valueOf( layerIndex ) );
 
         this.glowingLayers = layers;
-    }
-
-    public void syncFromAttachment( BlockEntity banner ) {
-        if ( banner == null ) return;
-        GlowingLayersComponent current = banner.getAttachedOrCreate(
-            AttachmentInit.BANNER_GLOWING_LAYERS
-        );
-        this.glowingLayers = current.getGlowingLayers();
-        banner.setComponents(
-            ComponentMap.builder().add(
-                ItemComponentInit.GLOWING_LAYERS,
-                new GlowingLayersComponent( current.glowingLayers )
-            ).build()
-        );
     }
 }

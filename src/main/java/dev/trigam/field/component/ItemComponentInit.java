@@ -12,6 +12,7 @@ public class ItemComponentInit {
         register( "glowing_layers",
             builder -> builder
                 .codec( GlowingLayersComponent.CODEC )
+                .packetCodec( GlowingLayersComponent.PACKET_CODEC )
                 .cache()
         );
 
