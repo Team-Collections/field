@@ -14,8 +14,8 @@
 		"block.minecraft.banner.triangle_top": "Per Saltire Chief",
 		"block.minecraft.banner.triangle_bottom": "Per Saltire Base",
 
-		"block.minecraft.banner.gradient": "Grady in Pale Chief",
-		"block.minecraft.banner.gradient_up": "Grady in Pale Base",
+		"block.minecraft.banner.gradient": "Grady Chief",
+		"block.minecraft.banner.gradient_up": "Grady Base",
 
 		"block.minecraft.banner.small_stripes": "Paly",
 
@@ -70,5 +70,44 @@
 		"block.minecraft.banner.flow": "Flow Charge",
 
 		"item.minecraft.guster_banner_pattern.new": "Guster Charge Banner Pattern",
-		"block.minecraft.banner.guster": "Guster Charge"
+		"block.minecraft.banner.guster": "Guster Charge",
+	
+	
+	
+	"_MUKI'S_EXTRA_BANNERS_": "",
+		"25_fade": "Veil",
+
+		"bend_tilted": "Bend Tilted Dexter",
+		"bend_tilted_sinister": "Bend Tilted Sinister",
+
+		"billet_center": "Billet",
+		"billet_bottom": "Billet Base",
+		"billet_left": "Billet Dexter",
+		"billet_right": "Billet Sinister",
+		"billet_top": "Billet Chief",
+
+		"bordure_center": "Bordure Indented per Fess",
+		"bordure_corners": "Bordure Indented per Saltire",
+
+		"top_keystone_down": "Keystone Chief",
+		"top_keystone_up": "Keystone Chief Inverted",
+		"bottom_keystone_up": "Keystone Base",
+		"bottom_keystone_down": "Keystone Base Inverted",
+
+		"gradient_left": "Grady Dexter",
+		"gradient_right": "Grady Sinister",
+
+		"left_chevron": "Per Saltire Dexter",
+		"right_chevron": "Per Saltire Sinister",
+
+		"left_indented": "Dexter Indented",
+		"right_indented": "Sinister Indented",
+
+		"checkered": "Per Gyronny Sinister Chief",
+		"checkered_inverted": "Per Gyronny Dexter Chief",
+
+		"quarter_top_left": "Quarter Chief Dexter",
+		"quarter_top_right": "Quarter Chief Sinister",
+		"quarter_bottom_left": "Quarter Base Dexter",
+		"quarter_bottom_right": "Quarter Base Dexter"
 }
