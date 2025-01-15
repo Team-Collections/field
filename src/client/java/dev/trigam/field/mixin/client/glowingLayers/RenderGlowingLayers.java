@@ -25,7 +25,7 @@ public class RenderGlowingLayers {
     )
     private void getBannerData( BannerBlockEntity bannerBlockEntity, float f, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, int j, CallbackInfo ci ) {
         if ( bannerBlockEntity.hasWorld() ) {
-            FieldClient.setGlowingContext( bannerBlockEntity );
+            FieldClient.setGlowingContext( (FieldBannerBlockEntity) bannerBlockEntity);
         }
     }
 
@@ -53,8 +53,8 @@ public class RenderGlowingLayers {
     private static int getBaseLight( int light ) {
         if ( FieldClient.glowingContext == null ) return light;
 
-        GlowingLayersComponent glowingLayers = ((FieldBannerBlockEntity) FieldClient.glowingContext).field$getGlowingLayers();
-        boolean isBaseGlowing = glowingLayers.isLayerGlowing( 0 );
+        GlowingLayersComponent glowingLayers = FieldClient.glowingContext.field$getGlowingLayers();
+        boolean isBaseGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( 0 );
 
         if ( isBaseGlowing ) return 15728880;
         else return light;
@@ -71,8 +71,10 @@ public class RenderGlowingLayers {
     )
     private static int getLayerLight( int light, @Local( ordinal = 2 ) int layerIndex ) {
         if ( FieldClient.glowingContext == null ) return light;
-        GlowingLayersComponent glowingLayers = ((FieldBannerBlockEntity) FieldClient.glowingContext).field$getGlowingLayers();
-        boolean isLayerGlowing = glowingLayers.isLayerGlowing( layerIndex + 1 );
+        GlowingLayersComponent glowingLayers = FieldClient.glowingContext.field$getGlowingLayers();
+
+        boolean isLayerGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( layerIndex + 1 );
+        if ( glowingLayers != null ) FieldClient.LOGGER.info( glowingLayers.getGlowingLayers().toString() );
 
         if ( isLayerGlowing ) return 15728880;
         else return light;

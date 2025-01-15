@@ -2,8 +2,8 @@ package dev.trigam.field;
 
 import dev.trigam.field.entity.model.EntityModelInit;
 import dev.trigam.field.entity.model.EntityModelLayerInit;
+import dev.trigam.field.impl.FieldBannerBlockEntity;
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.block.entity.BannerBlockEntity;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,9 +26,9 @@ public class FieldClient implements ClientModInitializer {
 
 	// To keep track of which banner is being
 	// rendered with glowing layers
-	public static BannerBlockEntity glowingContext;
+	public static FieldBannerBlockEntity glowingContext;
 
-	public static void setGlowingContext( BannerBlockEntity banner ) {
+	public static void setGlowingContext( FieldBannerBlockEntity banner ) {
 		glowingContext = banner;
 	}
 }

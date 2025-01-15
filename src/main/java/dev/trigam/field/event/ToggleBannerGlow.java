@@ -51,8 +51,8 @@ public class ToggleBannerGlow {
             world.playSound( null, pos, useSound, SoundCategory.BLOCKS, 1.0F, 1.0F );
 
             // Toggle glowing
-            if ( addGlowing ) glowingLayers.setLayerGlowing( targetLayer, true );
-            if ( removeGlowing ) glowingLayers.setLayerGlowing( targetLayer, false );
+            if ( addGlowing ) ((FieldBannerBlockEntity) banner).field$setLayerGlowing( targetLayer, true );
+            if ( removeGlowing ) ((FieldBannerBlockEntity) banner).field$setLayerGlowing( targetLayer, false );
 
             // Stack + stats
             if ( !player.isCreative() ) usedItem.decrement( 1 );

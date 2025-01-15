@@ -7,6 +7,7 @@ import dev.trigam.field.block.entity.WallHangingBannerBlockEntity;
 import dev.trigam.field.entity.model.EntityModelLayerInit;
 import dev.trigam.field.entity.model.banner.BannerFlagModel;
 import dev.trigam.field.entity.model.banner.WallHangingBannerModel;
+import dev.trigam.field.impl.FieldBannerBlockEntity;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.render.VertexConsumer;
@@ -91,7 +92,7 @@ public class WallHangingBannerRenderer implements BlockEntityRenderer<WallHangin
         VertexConsumer vertexConsumer = ModelBaker.BANNER_BASE.getVertexConsumer( vertexProvider, RenderLayer::getEntitySolid );
         this.flagModel.render( matrices, vertexConsumer, light, overlay );
 
-        FieldClient.setGlowingContext( banner );
+        FieldClient.setGlowingContext( ( FieldBannerBlockEntity ) banner );
         BannerBlockEntityRenderer.renderCanvas(
             matrices, vertexProvider, light, overlay,
             this.flagModel.getRootPart(), SPRITE, true,

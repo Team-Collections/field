@@ -6,6 +6,6 @@ public interface FieldBannerBlockEntity {
 
     GlowingLayersComponent field$getGlowingLayers();
 
-    void field$setGlowing( int layerIndex, boolean glowing );
+    void field$setLayerGlowing( int layerIndex, boolean glowing );
 
 }
