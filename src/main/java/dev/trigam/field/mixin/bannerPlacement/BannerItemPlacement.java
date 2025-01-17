@@ -43,7 +43,6 @@ public class BannerItemPlacement {
             else if ( side == playerFacing.getOpposite() ) { return; }
             // Wall Hanging Banner
             else {
-                Field.LOGGER.info( "Wall Hanging" );
                 Block hangingBanner = WallHangingBannerBlock.getForColor( banner.getColor() );
                 BlockState state = hangingBanner.getPlacementState( context );
                 cir.setReturnValue( state );

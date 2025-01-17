@@ -3,8 +3,10 @@
     "package": "dev.trigam.field.mixin",
     "compatibilityLevel": "JAVA_21",
     "mixins": [
+        "BannerInteraction",
         "bannerLayers.BannerDuplicateRecipeFix",
         "bannerLayers.LoomScreenHandlerFix",
+        "bannerPickStack.PickStackComponents",
         "bannerPlacement.BannerItemPlacement",
         "bannerPlacement.WallHangingSignsConnect",
         "component.BannerEntityComponents",

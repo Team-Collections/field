@@ -37,7 +37,6 @@ public abstract class BannerEntityComponents extends BlockEntity implements Name
     @Override
     public void field$setLayerGlowing( int layerIndex, boolean glowing ) {
         this.glowingLayers.setLayerGlowing( layerIndex, glowing );
-        Field.LOGGER.info( "Setting layer {} to {}", layerIndex, glowing ? "glowing" : "boring" );
     }
 
     @Inject(

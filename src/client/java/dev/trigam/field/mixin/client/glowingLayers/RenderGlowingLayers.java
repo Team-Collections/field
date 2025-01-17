@@ -74,7 +74,6 @@ public class RenderGlowingLayers {
         GlowingLayersComponent glowingLayers = FieldClient.glowingContext.field$getGlowingLayers();
 
         boolean isLayerGlowing = glowingLayers != null && glowingLayers.isLayerGlowing( layerIndex + 1 );
-        if ( glowingLayers != null ) FieldClient.LOGGER.info( glowingLayers.getGlowingLayers().toString() );
 
         if ( isLayerGlowing ) return 15728880;
         else return light;

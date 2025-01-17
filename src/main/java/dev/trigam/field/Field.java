@@ -4,7 +4,6 @@ import dev.trigam.field.block.BlockInit;
 import dev.trigam.field.block.entity.BlockEntityInit;
 import dev.trigam.field.component.ItemComponentInit;
 import dev.trigam.field.config.FieldConfig;
-import dev.trigam.field.event.EventInit;
 import dev.trigam.field.item.InventoryInit;
 import dev.trigam.field.item.ItemInit;
 import dev.trigam.field.item.ModifyItemInit;
@@ -27,17 +26,19 @@ public class Field implements ModInitializer {
 	public void onInitialize() {
 		MidnightConfig.init( MOD_ID, FieldConfig.class );
 
+		// Items
 		ItemInit.init();
 		InventoryInit.init();
 		ModifyItemInit.init();
 
-		ItemComponentInit.init();
-
+		// Blocks/Block Entities
 		BlockInit.init();
 		BlockEntityInit.init();
 
-		BannerPatternTagInit.init();
+		// Components
+		ItemComponentInit.init();
 
-		EventInit.init();
+		// Tags
+		BannerPatternTagInit.init();
 	}
 }
