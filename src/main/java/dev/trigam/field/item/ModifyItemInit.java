@@ -1,5 +1,7 @@
 package dev.trigam.field.item;
 
+import dev.trigam.field.component.GlowingLayersComponent;
+import dev.trigam.field.component.ItemComponentInit;
 import dev.trigam.field.config.FieldConfig;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.component.DataComponentTypes;
@@ -44,6 +46,15 @@ public class ModifyItemInit {
                         )
                     );
                 }
+            }
+            // Glowing Banners
+            for ( Item banner : BANNERS ) {
+                context.modify( banner, builder ->
+                    builder.add(
+                        ItemComponentInit.GLOWING_LAYERS,
+                        GlowingLayersComponent.DEFAULT
+                    )
+                );
             }
         });
     }

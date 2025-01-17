@@ -9,9 +9,10 @@ import java.util.List;
 
 public class GlowingLayersComponent {
 
-    public List<Integer> glowingLayers = new ArrayList<>();
+    public List<Integer> glowingLayers;
+    public static final GlowingLayersComponent DEFAULT = new GlowingLayersComponent( List.of() );
 
-    public GlowingLayersComponent () {}
+    public GlowingLayersComponent () { this.glowingLayers = List.of(); }
     public GlowingLayersComponent ( List<Integer> glowingLayers ) { this.glowingLayers = glowingLayers; }
 
     // Codecs
