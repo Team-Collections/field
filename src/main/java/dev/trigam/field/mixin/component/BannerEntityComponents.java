@@ -39,6 +39,11 @@ public abstract class BannerEntityComponents extends BlockEntity implements Name
         this.glowingLayers.setLayerGlowing( layerIndex, glowing );
     }
 
+    @Override
+    public boolean field$isEmpty () {
+        return this.glowingLayers.glowingLayers.isEmpty();
+    }
+
     @Inject(
         method = "readComponents",
         at = @At( value = "TAIL" )
@@ -52,7 +57,7 @@ public abstract class BannerEntityComponents extends BlockEntity implements Name
         at = @At( value = "TAIL" )
     )
     private void addComponents( ComponentMap.Builder builder, CallbackInfo ci ) {
-        builder.add( ItemComponentInit.GLOWING_LAYERS, this.glowingLayers );
+        if ( !this.field$isEmpty() ) builder.add( ItemComponentInit.GLOWING_LAYERS, this.glowingLayers );
     }
 
     @Inject(
@@ -77,7 +82,7 @@ public abstract class BannerEntityComponents extends BlockEntity implements Name
         at = @At( value = "TAIL" )
     )
     private void writeNbt( NbtCompound nbt, RegistryWrapper.WrapperLookup registries, CallbackInfo ci ) {
-        if ( this.glowingLayers != null ) {
+        if ( this.glowingLayers != null && !this.field$isEmpty() ) {
             nbt.put( "glowing_layers",
                 GlowingLayersComponent.CODEC.encodeStart(
                     registries.getOps( NbtOps.INSTANCE ),

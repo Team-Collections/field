@@ -8,4 +8,6 @@ public interface FieldBannerBlockEntity {
 
     void field$setLayerGlowing( int layerIndex, boolean glowing );
 
+    boolean field$isEmpty ();
+
 }
