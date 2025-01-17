@@ -6,7 +6,6 @@
         "BannerInteraction",
         "bannerLayers.BannerDuplicateRecipeFix",
         "bannerLayers.LoomScreenHandlerFix",
-        "bannerPickStack.PickStackComponents",
         "bannerPlacement.BannerItemPlacement",
         "bannerPlacement.WallHangingSignsConnect",
         "component.BannerEntityComponents",

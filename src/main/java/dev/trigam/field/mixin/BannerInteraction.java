@@ -91,9 +91,9 @@ abstract class BannerInteraction extends BlockWithEntity  {
 
     @Unique
     private static int getTargetLayer (
-            List<BannerPatternsComponent.Layer> bannerLayers,
-            GlowingLayersComponent glowingLayers,
-            boolean addGlowing
+        List<BannerPatternsComponent.Layer> bannerLayers,
+        GlowingLayersComponent glowingLayers,
+        boolean addGlowing
     ) {
         int targetLayer = bannerLayers.size();
         for ( int i = bannerLayers.size(); i >= 0; i-- ) {
