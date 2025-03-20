@@ -19,6 +19,7 @@ public class BlockInit {
         "white_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.WHITE, settings ),
         AbstractBlock.Settings.copy( Blocks.WHITE_BANNER )
+            .lootTable( Blocks.WHITE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -26,6 +27,7 @@ public class BlockInit {
         "light_gray_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.LIGHT_GRAY, settings ),
         AbstractBlock.Settings.copy( Blocks.LIGHT_GRAY_BANNER )
+            .lootTable( Blocks.LIGHT_GRAY_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -33,6 +35,7 @@ public class BlockInit {
         "gray_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.GRAY, settings ),
         AbstractBlock.Settings.copy( Blocks.GRAY_BANNER )
+            .lootTable( Blocks.GRAY_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -40,6 +43,7 @@ public class BlockInit {
         "black_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.BLACK, settings ),
         AbstractBlock.Settings.copy( Blocks.BLACK_BANNER )
+            .lootTable( Blocks.BLACK_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -47,6 +51,7 @@ public class BlockInit {
         "brown_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.BROWN, settings ),
         AbstractBlock.Settings.copy( Blocks.BROWN_BANNER )
+            .lootTable( Blocks.BROWN_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -54,6 +59,7 @@ public class BlockInit {
         "red_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.RED, settings ),
         AbstractBlock.Settings.copy( Blocks.RED_BANNER )
+            .lootTable( Blocks.RED_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -61,6 +67,7 @@ public class BlockInit {
         "orange_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.ORANGE, settings ),
         AbstractBlock.Settings.copy( Blocks.ORANGE_BANNER )
+            .lootTable( Blocks.ORANGE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -68,6 +75,7 @@ public class BlockInit {
         "yellow_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.YELLOW, settings ),
         AbstractBlock.Settings.copy( Blocks.YELLOW_BANNER )
+            .lootTable( Blocks.YELLOW_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -75,6 +83,7 @@ public class BlockInit {
         "lime_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.LIME, settings ),
         AbstractBlock.Settings.copy( Blocks.LIME_BANNER )
+            .lootTable( Blocks.LIME_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -82,6 +91,7 @@ public class BlockInit {
         "green_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.GREEN, settings ),
         AbstractBlock.Settings.copy( Blocks.GREEN_BANNER )
+            .lootTable( Blocks.GREEN_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -89,6 +99,7 @@ public class BlockInit {
         "cyan_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.CYAN, settings ),
         AbstractBlock.Settings.copy( Blocks.CYAN_BANNER )
+            .lootTable( Blocks.CYAN_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -96,6 +107,7 @@ public class BlockInit {
         "light_blue_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.LIGHT_BLUE, settings ),
         AbstractBlock.Settings.copy( Blocks.LIGHT_BLUE_BANNER )
+            .lootTable( Blocks.LIGHT_BLUE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -103,6 +115,7 @@ public class BlockInit {
         "blue_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.BLUE, settings ),
         AbstractBlock.Settings.copy( Blocks.BLUE_BANNER )
+            .lootTable( Blocks.BLUE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -110,6 +123,7 @@ public class BlockInit {
         "purple_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.PURPLE, settings ),
         AbstractBlock.Settings.copy( Blocks.PURPLE_BANNER )
+            .lootTable( Blocks.PURPLE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -117,6 +131,7 @@ public class BlockInit {
         "magenta_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.MAGENTA, settings ),
         AbstractBlock.Settings.copy( Blocks.MAGENTA_BANNER )
+            .lootTable( Blocks.MAGENTA_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -124,6 +139,7 @@ public class BlockInit {
         "pink_hanging_banner",
         settings -> new HangingBannerBlock( DyeColor.PINK, settings ),
         AbstractBlock.Settings.copy( Blocks.PINK_BANNER )
+            .lootTable( Blocks.PINK_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -132,6 +148,7 @@ public class BlockInit {
         "white_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.WHITE, settings ),
         AbstractBlock.Settings.copy( Blocks.WHITE_BANNER )
+            .lootTable( Blocks.WHITE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -139,6 +156,7 @@ public class BlockInit {
         "light_gray_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.LIGHT_GRAY, settings ),
         AbstractBlock.Settings.copy( Blocks.LIGHT_GRAY_BANNER )
+            .lootTable( Blocks.LIGHT_GRAY_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -146,6 +164,7 @@ public class BlockInit {
         "gray_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.GRAY, settings ),
         AbstractBlock.Settings.copy( Blocks.GRAY_BANNER )
+            .lootTable( Blocks.GRAY_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -153,6 +172,7 @@ public class BlockInit {
         "black_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.BLACK, settings ),
         AbstractBlock.Settings.copy( Blocks.BLACK_BANNER )
+            .lootTable( Blocks.BLACK_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -160,6 +180,7 @@ public class BlockInit {
         "brown_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.BROWN, settings ),
         AbstractBlock.Settings.copy( Blocks.BROWN_BANNER )
+            .lootTable( Blocks.BROWN_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -167,6 +188,7 @@ public class BlockInit {
         "red_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.RED, settings ),
         AbstractBlock.Settings.copy( Blocks.RED_BANNER )
+            .lootTable( Blocks.RED_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -174,6 +196,7 @@ public class BlockInit {
         "orange_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.ORANGE, settings ),
         AbstractBlock.Settings.copy( Blocks.ORANGE_BANNER )
+            .lootTable( Blocks.ORANGE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -181,6 +204,7 @@ public class BlockInit {
         "yellow_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.YELLOW, settings ),
         AbstractBlock.Settings.copy( Blocks.YELLOW_BANNER )
+            .lootTable( Blocks.YELLOW_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -188,6 +212,7 @@ public class BlockInit {
         "lime_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.LIME, settings ),
         AbstractBlock.Settings.copy( Blocks.LIME_BANNER )
+            .lootTable( Blocks.LIME_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -195,6 +220,7 @@ public class BlockInit {
         "green_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.GREEN, settings ),
         AbstractBlock.Settings.copy( Blocks.GREEN_BANNER )
+            .lootTable( Blocks.GREEN_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -202,6 +228,7 @@ public class BlockInit {
         "cyan_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.CYAN, settings ),
         AbstractBlock.Settings.copy( Blocks.CYAN_BANNER )
+            .lootTable( Blocks.CYAN_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -209,6 +236,7 @@ public class BlockInit {
         "light_blue_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.LIGHT_BLUE, settings ),
         AbstractBlock.Settings.copy( Blocks.LIGHT_BLUE_BANNER )
+                .lootTable( Blocks.LIGHT_BLUE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -216,6 +244,7 @@ public class BlockInit {
         "blue_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.BLUE, settings ),
         AbstractBlock.Settings.copy( Blocks.BLUE_BANNER )
+            .lootTable( Blocks.BLUE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -223,6 +252,7 @@ public class BlockInit {
         "purple_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.PURPLE, settings ),
         AbstractBlock.Settings.copy( Blocks.PURPLE_BANNER )
+            .lootTable( Blocks.PURPLE_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -230,6 +260,7 @@ public class BlockInit {
         "magenta_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.MAGENTA, settings ),
         AbstractBlock.Settings.copy( Blocks.MAGENTA_BANNER )
+            .lootTable( Blocks.MAGENTA_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 
@@ -237,6 +268,7 @@ public class BlockInit {
         "pink_wall_hanging_banner",
         settings -> new WallHangingBannerBlock( DyeColor.PINK, settings ),
         AbstractBlock.Settings.copy( Blocks.PINK_BANNER )
+            .lootTable( Blocks.PINK_BANNER.getLootTableKey() )
             .sounds( BlockSoundGroup.HANGING_SIGN )
     );
 

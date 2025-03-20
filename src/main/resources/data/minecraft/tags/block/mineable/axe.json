@@ -1,0 +1,39 @@
+{
+    "replace": false,
+    "values": [
+        "field:white_hanging_banner",
+        "field:light_gray_hanging_banner",
+        "field:gray_hanging_banner",
+        "field:black_hanging_banner",
+        "field:brown_hanging_banner",
+        "field:red_hanging_banner",
+        "field:orange_hanging_banner",
+        "field:yellow_hanging_banner",
+        "field:lime_hanging_banner",
+        "field:green_hanging_banner",
+        "field:cyan_hanging_banner",
+        "field:light_blue_hanging_banner",
+        "field:blue_hanging_banner",
+        "field:purple_hanging_banner",
+        "field:magenta_hanging_banner",
+        "field:pink_hanging_banner",
+
+
+        "field:white_wall_hanging_banner",
+        "field:light_gray_wall_hanging_banner",
+        "field:gray_wall_hanging_banner",
+        "field:black_wall_hanging_banner",
+        "field:brown_wall_hanging_banner",
+        "field:red_wall_hanging_banner",
+        "field:orange_wall_hanging_banner",
+        "field:yellow_wall_hanging_banner",
+        "field:lime_wall_hanging_banner",
+        "field:green_wall_hanging_banner",
+        "field:cyan_wall_hanging_banner",
+        "field:light_blue_wall_hanging_banner",
+        "field:blue_wall_hanging_banner",
+        "field:purple_wall_hanging_banner",
+        "field:magenta_wall_hanging_banner",
+        "field:pink_wall_hanging_banner"
+    ]
+}
